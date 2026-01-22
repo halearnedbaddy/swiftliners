@@ -85,7 +85,7 @@ export async function getBuyerOrders(params: { status?: string; page?: number; l
     .range((page - 1) * limit, page * limit - 1);
 
   if (params.status) {
-    query = query.eq("status", params.status as "pending" | "processing" | "paid" | "accepted" | "shipped" | "delivered" | "completed" | "disputed" | "cancelled" | "refunded" | "expired");
+    query = query.eq("status", params.status.toUpperCase() as "PENDING" | "PROCESSING" | "PAID" | "ACCEPTED" | "SHIPPED" | "DELIVERED" | "COMPLETED" | "DISPUTED" | "CANCELLED" | "REFUNDED" | "EXPIRED");
   }
 
   const { data, error, count } = await query;
@@ -189,7 +189,7 @@ export async function openDispute(transactionId: string, reason: string) {
       transaction_id: transactionId,
       reason,
       opened_by_id: session.user.id,
-      status: "open",
+      status: "OPEN",
     })
     .select()
     .single();
@@ -201,7 +201,7 @@ export async function openDispute(transactionId: string, reason: string) {
   // Update transaction status
   await supabase
     .from("transactions")
-    .update({ status: "disputed" })
+    .update({ status: "DISPUTED" })
     .eq("id", transactionId);
 
   return { success: true, data };
@@ -224,7 +224,7 @@ export async function getSellerOrders(params: { status?: string; page?: number; 
     .range((page - 1) * limit, page * limit - 1);
 
   if (params.status) {
-    query = query.eq("status", params.status as "pending" | "processing" | "paid" | "accepted" | "shipped" | "delivered" | "completed" | "disputed" | "cancelled" | "refunded" | "expired");
+    query = query.eq("status", params.status.toUpperCase() as "PENDING" | "PROCESSING" | "PAID" | "ACCEPTED" | "SHIPPED" | "DELIVERED" | "COMPLETED" | "DISPUTED" | "CANCELLED" | "REFUNDED" | "EXPIRED");
   }
 
   const { data, error, count } = await query;
@@ -277,18 +277,18 @@ export async function getSellerStats() {
     .eq("user_id", userId)
     .maybeSingle();
 
-  // Get seller profile
+  // Get seller profile from profiles table
   const { data: profile } = await supabase
-    .from("seller_profiles")
+    .from("profiles")
     .select("*")
     .eq("user_id", userId)
     .maybeSingle();
 
   const orderList = orders || [];
   const total = orderList.length;
-  const completed = orderList.filter(o => o.status === "completed" || o.status === "delivered").length;
-  const pending = orderList.filter(o => o.status === "pending" || o.status === "paid").length;
-  const disputed = orderList.filter(o => o.status === "disputed").length;
+  const completed = orderList.filter(o => o.status === "COMPLETED" || o.status === "DELIVERED").length;
+  const pending = orderList.filter(o => o.status === "PENDING" || o.status === "PAID").length;
+  const disputed = orderList.filter(o => o.status === "DISPUTED").length;
 
   return {
     success: true,
@@ -320,7 +320,7 @@ export async function acceptOrder(orderId: string) {
   const { data, error } = await supabase
     .from("transactions")
     .update({
-      status: "accepted",
+      status: "ACCEPTED",
       accepted_at: new Date().toISOString(),
     })
     .eq("id", orderId)
@@ -342,7 +342,7 @@ export async function rejectOrder(orderId: string, reason?: string) {
   const { data, error } = await supabase
     .from("transactions")
     .update({
-      status: "cancelled",
+      status: "CANCELLED",
       rejection_reason: reason,
       rejected_at: new Date().toISOString(),
     })
@@ -370,7 +370,7 @@ export async function addShippingInfo(orderId: string, data: {
   const { data: updated, error } = await supabase
     .from("transactions")
     .update({
-      status: "shipped",
+      status: "SHIPPED",
       courier_name: data.courierName,
       tracking_number: data.trackingNumber,
       estimated_delivery_date: data.estimatedDeliveryDate,
@@ -398,7 +398,7 @@ export async function getMyStore() {
   const { data: store, error } = await supabase
     .from("stores")
     .select("*, social_accounts(*)")
-    .eq("seller_id", session.user.id)
+    .eq("user_id", session.user.id)
     .maybeSingle();
 
   if (error) {
@@ -415,10 +415,10 @@ export async function createStore(data: { name: string; slug: string }) {
   const { data: store, error } = await supabase
     .from("stores")
     .insert({
-      seller_id: session.user.id,
+      user_id: session.user.id,
       name: data.name,
       slug: data.slug,
-      status: "inactive",
+      status: "INACTIVE",
       visibility: "PRIVATE",
     })
     .select()
@@ -451,7 +451,7 @@ export async function updateStore(data: {
       ...(data.visibility && { visibility: data.visibility }),
       updated_at: new Date().toISOString(),
     })
-    .eq("seller_id", session.user.id)
+    .eq("user_id", session.user.id)
     .select()
     .single();
 
@@ -462,14 +462,14 @@ export async function updateStore(data: {
   return { success: true, data: store };
 }
 
-export async function updateStoreStatus(status: "inactive" | "active" | "frozen") {
+export async function updateStoreStatus(status: "INACTIVE" | "ACTIVE" | "FROZEN") {
   const { data: { session } } = await supabase.auth.getSession();
   if (!session) return { success: false, error: "Not authenticated" };
 
   const { data: store, error } = await supabase
     .from("stores")
     .update({ status, updated_at: new Date().toISOString() })
-    .eq("seller_id", session.user.id)
+    .eq("user_id", session.user.id)
     .select()
     .single();
 
@@ -526,7 +526,7 @@ export async function addPaymentMethod(data: {
     .from("payment_methods")
     .insert({
       user_id: session.user.id,
-      type: data.type.toLowerCase() === "mobile_money" ? "mobile_money" : "bank_account",
+      type: data.type.toUpperCase() === "MOBILE_MONEY" ? "MOBILE_MONEY" : "BANK_ACCOUNT",
       provider: data.provider,
       account_number: data.accountNumber,
       account_name: data.accountName,
@@ -643,7 +643,7 @@ export async function listSocialAccounts() {
   const { data: store } = await supabase
     .from("stores")
     .select("id")
-    .eq("seller_id", session.user.id)
+    .eq("user_id", session.user.id)
     .maybeSingle();
 
   if (!store) {
@@ -673,7 +673,7 @@ export async function connectSocialPage(data: {
   const { data: store } = await supabase
     .from("stores")
     .select("id")
-    .eq("seller_id", session.user.id)
+    .eq("user_id", session.user.id)
     .maybeSingle();
 
   if (!store) {
@@ -684,7 +684,7 @@ export async function connectSocialPage(data: {
     .from("social_accounts")
     .insert({
       store_id: store.id,
-      platform: data.platform.toLowerCase() as "instagram" | "facebook" | "linkedin",
+      platform: data.platform.toUpperCase() as "INSTAGRAM" | "FACEBOOK" | "LINKEDIN",
       page_url: data.pageUrl,
       page_id: data.pageId,
     })
@@ -707,7 +707,7 @@ export async function listDraftProducts() {
   const { data: store } = await supabase
     .from("stores")
     .select("id")
-    .eq("seller_id", session.user.id)
+    .eq("user_id", session.user.id)
     .maybeSingle();
 
   if (!store) {
@@ -718,7 +718,7 @@ export async function listDraftProducts() {
     .from("products")
     .select("*")
     .eq("store_id", store.id)
-    .eq("status", "draft")
+    .eq("status", "DRAFT")
     .order("updated_at", { ascending: false });
 
   if (error) {
@@ -735,7 +735,7 @@ export async function listPublishedProducts() {
   const { data: store } = await supabase
     .from("stores")
     .select("id")
-    .eq("seller_id", session.user.id)
+    .eq("user_id", session.user.id)
     .maybeSingle();
 
   if (!store) {
@@ -746,7 +746,7 @@ export async function listPublishedProducts() {
     .from("products")
     .select("*")
     .eq("store_id", store.id)
-    .eq("status", "published")
+    .eq("status", "PUBLISHED")
     .order("updated_at", { ascending: false });
 
   if (error) {
@@ -761,7 +761,7 @@ export async function updateProduct(productId: string, data: {
   description?: string;
   price?: number;
   images?: string[];
-  status?: "draft" | "published" | "archived";
+  status?: "DRAFT" | "PUBLISHED" | "ARCHIVED";
 }) {
   const updateData: Record<string, unknown> = {
     updated_at: new Date().toISOString(),
@@ -788,11 +788,11 @@ export async function updateProduct(productId: string, data: {
 }
 
 export async function publishProduct(productId: string) {
-  return updateProduct(productId, { status: "published" as const });
+  return updateProduct(productId, { status: "PUBLISHED" });
 }
 
 export async function archiveProduct(productId: string) {
-  return updateProduct(productId, { status: "archived" as const });
+  return updateProduct(productId, { status: "ARCHIVED" });
 }
 
 export async function deleteProduct(productId: string) {

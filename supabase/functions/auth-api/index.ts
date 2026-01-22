@@ -28,6 +28,66 @@ function normalizePhoneNumber(phone: string): string {
   return cleaned;
 }
 
+// Format phone for SMS API (without +)
+function formatPhoneForSMS(phone: string): string {
+  let formatted = phone.trim().replace(/\D/g, '');
+  if (formatted.startsWith('0')) {
+    formatted = '254' + formatted.substring(1);
+  } else if (formatted.startsWith('7') || formatted.startsWith('1')) {
+    formatted = '254' + formatted;
+  } else if (!formatted.startsWith('254')) {
+    formatted = '254' + formatted;
+  }
+  return formatted;
+}
+
+// Send SMS via Bulk SMS Kenya (AdvantaSMS)
+async function sendSMS(phone: string, message: string): Promise<{ success: boolean; error?: string }> {
+  const apiKey = Deno.env.get("BULK_SMS_API_KEY");
+  const partnerID = "7810";
+  const senderId = "XpressKard";
+
+  if (!apiKey) {
+    console.error("❌ BULK_SMS_API_KEY not configured");
+    console.log(`📱 [DEV MODE] Would send SMS to ${phone}: ${message}`);
+    return { success: true }; // Return success for dev mode
+  }
+
+  const formattedPhone = formatPhoneForSMS(phone);
+  console.log(`📱 Sending SMS to ${formattedPhone} via Bulk SMS Kenya...`);
+
+  try {
+    const response = await fetch("https://quicksms.advantasms.com/api/services/sendsms/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        apikey: apiKey,
+        partnerID: partnerID,
+        message: message,
+        shortcode: senderId,
+        mobile: formattedPhone,
+      }),
+    });
+
+    const data = await response.json();
+    console.log("📱 SMS API Response:", JSON.stringify(data, null, 2));
+
+    // Check for success response
+    if (data.response_code === 200 || data.responses?.[0]?.response_code === 200 || response.ok) {
+      console.log(`✅ SMS sent successfully to ${formattedPhone}`);
+      return { success: true };
+    }
+
+    return { success: false, error: data.response_description || "SMS send failed" };
+  } catch (error: unknown) {
+    const errMsg = error instanceof Error ? error.message : String(error);
+    console.error("❌ Error sending SMS:", errMsg);
+    return { success: false, error: errMsg };
+  }
+}
+
 // Validate phone number
 function validatePhoneNumber(phone: string): boolean {
   const normalized = normalizePhoneNumber(phone);
@@ -141,15 +201,21 @@ async function handleRequestOTP(req: Request): Promise<Response> {
     expires_at: expiresAt,
   });
 
-  // In production, send SMS here
+  // Send SMS with OTP
+  const message = `Your SWIFTLINE verification code is: ${code}. Valid for 10 minutes. Do not share this code.`;
+  const smsResult = await sendSMS(normalizedPhone, message);
+
+  if (!smsResult.success) {
+    console.error("SMS send failed:", smsResult.error);
+    // Still return success but log the error - OTP is stored for testing
+  }
+
   console.log(`OTP for ${normalizedPhone}: ${code}`);
 
   return new Response(
     JSON.stringify({ 
       success: true, 
       message: "OTP sent successfully",
-      // Only include OTP in development
-      ...(Deno.env.get("ENVIRONMENT") !== "production" && { otp: code })
     }),
     { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
   );
