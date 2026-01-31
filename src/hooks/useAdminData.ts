@@ -28,11 +28,13 @@ export interface AdminDispute {
   transactionId: string;
   status: string;
   reason: string;
+  description?: string;
+  openedById?: string;
   transaction: {
     itemName: string;
     amount: number;
-    seller: { name: string };
-    buyer?: { name: string };
+    seller: { id?: string; name: string };
+    buyer?: { id?: string; name: string };
   };
   createdAt: string;
 }
@@ -105,11 +107,13 @@ export function useAdminData() {
           transactionId: d.transaction_id,
           status: d.status,
           reason: d.reason,
+          description: d.description,
+          openedById: d.opened_by_id,
           transaction: d.transactions ? {
             itemName: d.transactions.item_name,
             amount: d.transactions.amount,
-            seller: { name: 'Seller' },
-            buyer: d.transactions.buyer_name ? { name: d.transactions.buyer_name } : undefined,
+            seller: { id: d.transactions.seller_id, name: 'Seller' },
+            buyer: d.transactions.buyer_name ? { id: d.transactions.buyer_id, name: d.transactions.buyer_name } : undefined,
           } : { itemName: 'Unknown', amount: 0, seller: { name: 'Unknown' } },
           createdAt: d.created_at,
         }));

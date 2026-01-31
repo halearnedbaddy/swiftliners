@@ -1,15 +1,41 @@
 import { MessageSquare, AlertTriangle, CheckCircle, XCircle, Loader, Download } from 'lucide-react';
 import { useAdminData } from '@/hooks/useAdminData';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { exportToCSV } from '@/utils/csvExport';
 import { DateRangeFilter } from '@/components/ui/DateRangeFilter';
 import { api } from '@/services/api';
+import { AdminDisputeChat } from './AdminDisputeChat';
+import { supabase } from '@/integrations/supabase/client';
 
 export function AdminDisputes() {
     const { disputes, loading, error, refetch } = useAdminData();
     const [resolving, setResolving] = useState<string | null>(null);
     const [dateStart, setDateStart] = useState<string | null>(null);
     const [dateEnd, setDateEnd] = useState<string | null>(null);
+    const [selectedDispute, setSelectedDispute] = useState<typeof disputes[0] | null>(null);
+
+    // Set up realtime subscription for dispute updates
+    useEffect(() => {
+        const channel = supabase
+            .channel('admin-disputes-updates')
+            .on(
+                'postgres_changes',
+                {
+                    event: '*',
+                    schema: 'public',
+                    table: 'disputes',
+                },
+                () => {
+                    // Refetch disputes when any change occurs
+                    refetch();
+                }
+            )
+            .subscribe();
+
+        return () => {
+            supabase.removeChannel(channel);
+        };
+    }, [refetch]);
 
     // Filter disputes by date range
     const filteredDisputes = disputes.filter(dispute => {
@@ -171,8 +197,11 @@ export function AdminDisputes() {
                             </div>
 
                             <div className="flex flex-col gap-3 justify-center min-w-[200px]">
-                                <button className="w-full py-2 px-4 bg-[#3d1a7a] text-white rounded-null font-semibold hover:bg-[#250e52] transition flex items-center justify-center gap-2">
-                                    <MessageSquare size={16} /> View Evidence
+                                <button 
+                                    onClick={() => setSelectedDispute(dispute)}
+                                    className="w-full py-2 px-4 bg-[#3d1a7a] text-white rounded-null font-semibold hover:bg-[#250e52] transition flex items-center justify-center gap-2"
+                                >
+                                    <MessageSquare size={16} /> View & Chat
                                 </button>
                                 <div className="grid grid-cols-2 gap-2">
                                     <button
@@ -207,6 +236,28 @@ export function AdminDisputes() {
                     </div>
                 )}
             </div>
+
+            {/* Dispute Chat Modal */}
+            {selectedDispute && (
+                <AdminDisputeChat
+                    dispute={{
+                        id: selectedDispute.id,
+                        reason: selectedDispute.reason,
+                        status: selectedDispute.status,
+                        description: selectedDispute.description,
+                        opened_by_id: selectedDispute.openedById || '',
+                        transaction: selectedDispute.transaction ? {
+                            item_name: selectedDispute.transaction.itemName,
+                            amount: selectedDispute.transaction.amount,
+                            buyer_id: selectedDispute.transaction.buyer?.id,
+                            seller_id: selectedDispute.transaction.seller?.id,
+                        } : undefined,
+                    }}
+                    isOpen={true}
+                    onClose={() => setSelectedDispute(null)}
+                    onStatusChange={refetch}
+                />
+            )}
         </div>
     );
 }
