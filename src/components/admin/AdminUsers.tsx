@@ -126,7 +126,7 @@ export function AdminUsers() {
         await refetch();
     };
 
-    const handlePromoteUser = async (newRole: 'buyer' | 'seller' | 'admin') => {
+    const handlePromoteUser = async (newRole: 'BUYER' | 'SELLER' | 'ADMIN') => {
         if (!promotingUser) return;
         
         // Update user_roles table (this is the source of truth for authorization)
@@ -156,7 +156,7 @@ export function AdminUsers() {
             .from('profiles')
             .update({ 
                 is_active: true, 
-                account_status: 'active',
+                account_status: 'ACTIVE',
                 updated_at: new Date().toISOString(),
             })
             .eq('user_id', userId);
@@ -180,7 +180,7 @@ export function AdminUsers() {
             .from('profiles')
             .update({ 
                 is_active: false, 
-                account_status: 'suspended',
+                account_status: 'SUSPENDED',
                 updated_at: new Date().toISOString(),
             })
             .eq('user_id', userId);

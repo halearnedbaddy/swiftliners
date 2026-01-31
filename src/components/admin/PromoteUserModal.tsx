@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { X, Loader, ShieldCheck, AlertTriangle } from 'lucide-react';
 
-type UserRole = 'buyer' | 'seller' | 'admin';
+type UserRole = 'BUYER' | 'SELLER' | 'ADMIN';
 
 interface PromoteUserModalProps {
   user: {
@@ -21,21 +21,21 @@ export function PromoteUserModal({ user, isOpen, onClose, onPromote }: PromoteUs
 
   if (!isOpen) return null;
 
-  const currentRole = user.role.toLowerCase() as UserRole;
+  const currentRole = user.role.toUpperCase() as UserRole;
 
   const allRoles: { role: UserRole; label: string; description: string }[] = [
     { 
-      role: 'buyer', 
+      role: 'BUYER', 
       label: 'Buyer', 
       description: 'Can browse and purchase products' 
     },
     { 
-      role: 'seller', 
+      role: 'SELLER', 
       label: 'Seller', 
       description: 'Can create stores and sell products' 
     },
     { 
-      role: 'admin', 
+      role: 'ADMIN', 
       label: 'Admin', 
       description: 'Full platform access and management' 
     },
@@ -59,8 +59,8 @@ export function PromoteUserModal({ user, isOpen, onClose, onPromote }: PromoteUs
   };
 
   const isUpgrade = 
-    (currentRole === 'buyer' && (selectedRole === 'seller' || selectedRole === 'admin')) ||
-    (currentRole === 'seller' && selectedRole === 'admin');
+    (currentRole === 'BUYER' && (selectedRole === 'SELLER' || selectedRole === 'ADMIN')) ||
+    (currentRole === 'SELLER' && selectedRole === 'ADMIN');
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -119,7 +119,7 @@ export function PromoteUserModal({ user, isOpen, onClose, onPromote }: PromoteUs
             ))}
           </div>
 
-          {selectedRole === 'admin' && (
+          {selectedRole === 'ADMIN' && (
             <div className="flex items-start gap-2 p-3 bg-amber-50 border border-amber-200 rounded-lg">
               <AlertTriangle size={18} className="text-amber-600 mt-0.5 shrink-0" />
               <p className="text-sm text-amber-800">
