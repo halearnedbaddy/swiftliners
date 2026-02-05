@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayLoom - Get Started</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #6366f1;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --dark: #0f172a;
+            --card: #1e293b;
+            --border: #334155;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--success));
+            npm : text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+        
+        .progress-bar {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .progress-bar::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--border);
+            z-index: 0;
+        }
+        
+        .progress-bar .progress-fill {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            height: 2px;
+            background: var(--primary);
+            z-index: 1;
+            transition: width 0.3s ease;
+        }
+        
+        .progress-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .step-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--card);
+            border: 2px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .step-circle.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+        
+        .step-circle.completed {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
+        }
+        
+        .step-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+        
+        .step-label.active {
+            color: var(--text);
+            font-weight: 600;
+        }
+        
+        .form-container {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+        
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #4f46e5;
+            transform: translateY(-1px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-success {
+            background: var(--success);
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background: #059669;
+        }
+        
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+        
+        .success-message {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--success);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .success-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .api-keys-display {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .api-key-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 6px;
+        }
+        
+        .api-key-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 0.25rem;
+        }
+        
+        .api-key-value {
+            font-family: 'Monaco', monospace;
+            font-size: 0.9rem;
+            word-break: break-all;
+        }
+        
+        .copy-btn {
+            padding: 0.5rem 1rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        
+        .copy-btn:hover {
+            background: #4f46e5;
+        }
+        
+        .document-upload {
+            border: 2px dashed var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .document-upload:hover {
+            border-color: var(--primary);
+            background: rgba(99, 102, 241, 0.05);
+        }
+        
+        .document-upload.has-file {
+            border-color: var(--success);
+            background: rgba(16, 185, 129, 0.05);
+        }
+        
+        .upload-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .error-message {
+            color: var(--danger);
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+        
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .next-steps {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+        
+        .next-steps h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .step-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .step-number {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-container {
+                padding: 1.5rem;
+            }
+            
+            .progress-step {
+                font-size: 0.75rem;
+            }
+            
+            .step-circle {
+                width: 30px;
+                height: 30px;
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        const API_BASE = 'http://localhost:3000';
+
+        function OnboardingApp() {
+            const [currentStep, setCurrentStep] = useState(1);
+            const [formData, setFormData] = useState({
+                business_name: '',
+                email: '',
+                phone: '',
+                password: '',
+                confirmPassword: '',
+                use_case: '',
+                website: '',
+                description: '',
+                kyc_documents: {}
+            });
+            const [errors, setErrors] = useState({});
+            const [isLoading, setIsLoading] = useState(false);
+            const [registrationComplete, setRegistrationComplete] = useState(false);
+            const [apiKeys, setApiKeys] = useState(null);
+
+            const steps = [
+                { id: 1, label: 'Business Info' },
+                { id: 2, label: 'Account Setup' },
+                { id: 3, label: 'Use Case' },
+                { id: 4, label: 'KYC Documents' },
+                { id: 5, label: 'Complete' }
+            ];
+
+            const useCases = [
+                { value: 'e-commerce', label: 'E-commerce Platform' },
+                { value: 'marketplace', label: 'Marketplace' },
+                { value: 'freelance', label: 'Freelance Platform' },
+                { value: 'payment-gateway', label: 'Payment Gateway' },
+                { value: 'other', label: 'Other' }
+            ];
+
+            const kycDocuments = [
+                { key: 'company_registration', label: 'Company Registration Certificate', required: true },
+                { key: 'tax_certificate', label: 'Tax PIN Certificate', required: true },
+                { key: 'business_permit', label: 'Business Permit', required: true },
+                { key: 'owner_id', label: 'Owner National ID', required: true },
+                { key: 'owner_selfie', label: 'Owner Selfie with ID', required: true },
+                { key: 'bank_statement', label: 'Bank Statement (3 months)', required: true }
+            ];
+
+            const handleInputChange = (field, value) => {
+                setFormData(prev => ({ ...prev, [field]: value }));
+                // Clear error for this field
+                if (errors[field]) {
+                    setErrors(prev => ({ ...prev, [field]: '' }));
+                }
+            };
+
+            const validateStep = (step) => {
+                const newErrors = {};
+
+                if (step === 1) {
+                    if (!formData.business_name.trim()) {
+                        newErrors.business_name = 'Business name is required';
+                    }
+                    if (!formData.email.trim()) {
+                        newErrors.email = 'Email is required';
+                    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+                        newErrors.email = 'Email is invalid';
+                    }
+                    if (!formData.phone.trim()) {
+                        newErrors.phone = 'Phone number is required';
+                    }
+                }
+
+                if (step === 2) {
+                    if (!formData.password) {
+                        newErrors.password = 'Password is required';
+                    } else if (formData.password.length < 6) {
+                        newErrors.password = 'Password must be at least 6 characters';
+                    }
+                    if (!formData.confirmPassword) {
+                        newErrors.confirmPassword = 'Please confirm your password';
+                    } else if (formData.password !== formData.confirmPassword) {
+                        newErrors.confirmPassword = 'Passwords do not match';
+                    }
+                }
+
+                if (step === 3) {
+                    if (!formData.use_case) {
+                        newErrors.use_case = 'Please select a use case';
+                    }
+                }
+
+                setErrors(newErrors);
+                return Object.keys(newErrors).length === 0;
+            };
+
+            const handleNext = () => {
+                if (validateStep(currentStep)) {
+                    if (currentStep < steps.length) {
+                        setCurrentStep(currentStep + 1);
+                    }
+                }
+            };
+
+            const handlePrevious = () => {
+                if (currentStep > 1) {
+                    setCurrentStep(currentStep - 1);
+                }
+            };
+
+            const handleDocumentUpload = (docKey, file) => {
+                setFormData(prev => ({
+                    ...prev,
+                    kyc_documents: {
+                        ...prev.kyc_documents,
+                        [docKey]: file
+                    }
+                }));
+            };
+
+            const handleSubmit = async () => {
+                setIsLoading(true);
+                try {
+                    const response = await fetch(`${API_BASE}/api/v1/auth/register`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            business_name: formData.business_name,
+                            email: formData.email,
+                            phone: formData.phone,
+                            password: formData.password,
+                            use_case: formData.use_case,
+                            website: formData.website
+                        })
+                    });
+
+                    const data = await response.json();
+
+                    if (response.ok) {
+                        setApiKeys(data.api_keys);
+                        setRegistrationComplete(true);
+                        setCurrentStep(5);
+                    } else {
+                        setErrors({ submit: data.message || 'Registration failed' });
+                    }
+                } catch (error) {
+                    setErrors({ submit: 'Network error. Please try again.' });
+                } finally {
+                    setIsLoading(false);
+                }
+            };
+
+            const copyToClipboard = (text) => {
+                navigator.clipboard.writeText(text);
+                alert('Copied to clipboard!');
+            };
+
+            const getStepProgress = () => {
+                return ((currentStep - 1) / (steps.length - 1)) * 100;
+            };
+
+            const renderStepContent = () => {
+                switch (currentStep) {
+                    case 1:
+                        return (
+                            <div>
+                                <h2 style={{ marginBottom: '1.5rem' }}>Business Information</h2>
+                                <div className="form-group">
+                                    <label className="form-label">Business Name *</label>
+                                    <input
+                                        type="text"
+                                        className="form-input"
+                                        value={formData.business_name}
+                                        onChange={(e) => handleInputChange('business_name', e.target.value)}
+                                        placeholder="Enter your business name"
+                                    />
+                                    {errors.business_name && <div className="error-message">{errors.business_name}</div>}
+                                </div>
+                                <div className="form-row">
+                                    <div className="form-group">
+                                        <label className="form-label">Email Address *</label>
+                                        <input
+                                            type="email"
+                                            className="form-input"
+                                            value={formData.email}
+                                            onChange={(e) => handleInputChange('email', e.target.value)}
+                                            placeholder="business@example.com"
+                                        />
+                                        {errors.email && <div className="error-message">{errors.email}</div>}
+                                    </div>
+                                    <div className="form-group">
+                                        <label className="form-label">Phone Number *</label>
+                                        <input
+                                            type="tel"
+                                            className="form-input"
+                                            value={formData.phone}
+                                            onChange={(e) => handleInputChange('phone', e.target.value)}
+                                            placeholder="+254 712 345 678"
+                                        />
+                                        {errors.phone && <div className="error-message">{errors.phone}</div>}
+                                    </div>
+                                </div>
+                                <div className="form-group">
+                                    <label className="form-label">Website (Optional)</label>
+                                    <input
+                                        type="url"
+                                        className="form-input"
+                                        value={formData.website}
+                                        onChange={(e) => handleInputChange('website', e.target.value)}
+                                        placeholder="https://yourbusiness.com"
+                                    />
+                                </div>
+                            </div>
+                        );
+
+                    case 2:
+                        return (
+                            <div>
+                                <h2 style={{ marginBottom: '1.5rem' }}>Account Security</h2>
+                                <div className="form-row">
+                                    <div className="form-group">
+                                        <label className="form-label">Password *</label>
+                                        <input
+                                            type="password"
+                                            className="form-input"
+                                            value={formData.password}
+                                            onChange={(e) => handleInputChange('password', e.target.value)}
+                                            placeholder="Create a strong password"
+                                        />
+                                        {errors.password && <div className="error-message">{errors.password}</div>}
+                                    </div>
+                                    <div className="form-group">
+                                        <label className="form-label">Confirm Password *</label>
+                                        <input
+                                            type="password"
+                                            className="form-input"
+                                            value={formData.confirmPassword}
+                                            onChange={(e) => handleInputChange('confirmPassword', e.target.value)}
+                                            placeholder="Re-enter your password"
+                                        />
+                                        {errors.confirmPassword && <div className="error-message">{errors.confirmPassword}</div>}
+                                    </div>
+                                </div>
+                                <div style={{ background: 'rgba(99, 102, 241, 0.1)', padding: '1rem', borderRadius: '8px', marginTop: '1rem' }}>
+                                    <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>
+                                        <strong>Security Tip:</strong> Use a unique password with at least 6 characters, including numbers and symbols.
+                                    </p>
+                                </div>
+                            </div>
+                        );
+
+                    case 3:
+                        return (
+                            <div>
+                                <h2 style={{ marginBottom: '1.5rem' }}>Use Case</h2>
+                                <div className="form-group">
+                                    <label className="form-label">How will you use PayLoom? *</label>
+                                    <select
+                                        className="form-select"
+                                        value={formData.use_case}
+                                        onChange={(e) => handleInputChange('use_case', e.target.value)}
+                                    >
+                                        <option value="">Select your use case</option>
+                                        {useCases.map(useCase => (
+                                            <option key={useCase.value} value={useCase.value}>
+                                                {useCase.label}
+                                            </option>
+                                        ))}
+                                    </select>
+                                    {errors.use_case && <div className="error-message">{errors.use_case}</div>}
+                                </div>
+                                <div className="form-group">
+                                    <label className="form-label">Description (Optional)</label>
+                                    <textarea
+                                        className="form-textarea"
+                                        value={formData.description}
+                                        onChange={(e) => handleInputChange('description', e.target.value)}
+                                        placeholder="Tell us more about your business and how you plan to use our payment infrastructure..."
+                                    />
+                                </div>
+                            </div>
+                        );
+
+                    case 4:
+                        return (
+                            <div>
+                                <h2 style={{ marginBottom: '1.5rem' }}>KYC Documents</h2>
+                                <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>
+                                    Upload the following documents to enable live mode. You can skip this step for now and complete it later.
+                                </p>
+                                {kycDocuments.map(doc => (
+                                    <div key={doc.key} className="form-group">
+                                        <label className="form-label">
+                                            {doc.label} {doc.required && '*'}
+                                        </label>
+                                        <div className={`document-upload ${formData.kyc_documents[doc.key] ? 'has-file' : ''}`}>
+                                            <input
+                                                type="file"
+                                                style={{ display: 'none' }}
+                                                id={doc.key}
+                                                onChange={(e) => handleDocumentUpload(doc.key, e.target.files[0])}
+                                                accept="image/*,.pdf"
+                                            />
+                                            <label htmlFor={doc.key} style={{ cursor: 'pointer' }}>
+                                                <div className="upload-icon">📄</div>
+                                                <div>
+                                                    {formData.kyc_documents[doc.key] 
+                                                        ? `✅ ${formData.kyc_documents[doc.key].name}`
+                                                        : `Click to upload ${doc.label}`
+                                                    }
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        );
+
+                    case 5:
+                        return (
+                            <div>
+                                {registrationComplete ? (
+                                    <div>
+                                        <div className="success-message">
+                                            <div className="success-icon">🎉</div>
+                                            <h2 style={{ marginBottom: '1rem' }}>Welcome to PayLoom!</h2>
+                                            <p style={{ marginBottom: '1rem' }}>
+                                                Your account has been created successfully. Here are your test API keys to get started.
+                                            </p>
+                                        </div>
+
+                                        <div className="api-keys-display">
+                                            <h3 style={{ marginBottom: '1rem' }}>Test API Keys</h3>
+                                            {apiKeys && (
+                                                <>
+                                                    <div className="api-key-item">
+                                                        <div>
+                                                            <div className="api-key-label">Public Test Key</div>
+                                                            <div className="api-key-value">{apiKeys.public_test}</div>
+                                                        </div>
+                                                        <button className="copy-btn" onClick={() => copyToClipboard(apiKeys.public_test)}>
+                                                            📋 Copy
+                                                        </button>
+                                                    </div>
+                                                    <div className="api-key-item">
+                                                        <div>
+                                                            <div className="api-key-label">Secret Test Key</div>
+                                                            <div className="api-key-value">{apiKeys.secret_test}</div>
+                                                        </div>
+                                                        <button className="copy-btn" onClick={() => copyToClipboard(apiKeys.secret_test)}>
+                                                            📋 Copy
+                                                        </button>
+                                                    </div>
+                                                </>
+                                            )}
+                                        </div>
+
+                                        <div className="next-steps">
+                                            <h3>Next Steps</h3>
+                                            <div className="step-item">
+                                                <div className="step-number">1</div>
+                                                <div>Test your integration with our sandbox environment</div>
+                                            </div>
+                                            <div className="step-item">
+                                                <div className="step-number">2</div>
+                                                <div>Complete KYC verification to enable live mode</div>
+                                            </div>
+                                            <div className="step-item">
+                                                <div className="step-number">3</div>
+                                                <div>Go live and start processing real payments</div>
+                                            </div>
+                                        </div>
+
+                                        <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem' }}>
+                                            <a href="client-app.html" className="btn btn-primary" style={{ flex: 1, textAlign: 'center' }}>
+                                                Go to Dashboard
+                                            </a>
+                                            <a href="index.html" className="btn btn-secondary" style={{ flex: 1, textAlign: 'center' }}>
+                                                View Documentation
+                                            </a>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <div style={{ textAlign: 'center', padding: '3rem' }}>
+                                        <div className="loading" style={{ margin: '0 auto 1rem' }}></div>
+                                        <h2>Creating Your Account...</h2>
+                                        <p style={{ color: 'var(--text-muted)' }}>Please wait while we set up your PayLoom account</p>
+                                    </div>
+                                )}
+                            </div>
+                        );
+
+                    default:
+                        return null;
+                }
+            };
+
+            if (currentStep === 5 && !registrationComplete) {
+                return (
+                    <div className="container">
+                        <div className="form-container">
+                            {renderStepContent()}
+                        </div>
+                    </div>
+                );
+            }
+
+            return (
+                <div className="container">
+                    <div className="header">
+                        <div className="logo">⚡</div>
+                        <h1>Get Started with PayLoom</h1>
+                        <p className="subtitle">Complete payment infrastructure for Africa</p>
+                    </div>
+
+                    <div className="progress-bar">
+                        <div className="progress-fill" style={{ width: `${getStepProgress()}%` }}></div>
+                        {steps.map((step, index) => (
+                            <div key={step.id} className="progress-step">
+                                <div className={`step-circle ${currentStep > step.id ? 'completed' : currentStep === step.id ? 'active' : ''}`}>
+                                    {currentStep > step.id ? '✓' : step.id}
+                                </div>
+                                <div className={`step-label ${currentStep === step.id ? 'active' : ''}`}>
+                                    {step.label}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="form-container">
+                        {errors.submit && (
+                            <div style={{ background: 'rgba(239, 68, 68, 0.1)', border: '1px solid var(--danger)', borderRadius: '8px', padding: '1rem', marginBottom: '1.5rem' }}>
+                                {errors.submit}
+                            </div>
+                        )}
+
+                        {renderStepContent()}
+
+                        {currentStep < 5 && (
+                            <div className="form-actions">
+                                <button
+                                    className="btn btn-secondary"
+                                    onClick={handlePrevious}
+                                    disabled={currentStep === 1}
+                                >
+                                    Previous
+                                </button>
+                                <button
+                                    className="btn btn-primary"
+                                    onClick={currentStep === 4 ? handleSubmit : handleNext}
+                                    disabled={isLoading}
+                                >
+                                    {isLoading ? (
+                                        <>
+                                            <span className="loading" style={{ marginRight: '0.5rem' }}></span>
+                                            Processing...
+                                        </>
+                                    ) : currentStep === 4 ? (
+                                        'Complete Registration'
+                                    ) : (
+                                        'Next'
+                                    )}
+                                </button>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<OnboardingApp />, document.getElementById('root'));
+    </script>
+</body>
+</html>

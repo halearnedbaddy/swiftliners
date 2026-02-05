@@ -1,0 +1,443 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayLoom Instants - Complete Payment Infrastructure for Africa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 30% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+        }
+        
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #6366f1, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            color: #94a3b8;
+            margin-bottom: 3rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
+            color: white;
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #e2e8f0;
+            border: 2px solid #334155;
+        }
+        
+        .btn-secondary:hover {
+            border-color: #6366f1;
+            background: rgba(99, 102, 241, 0.1);
+        }
+        
+        .features {
+            padding: 6rem 2rem;
+            background: rgba(30, 41, 59, 0.5);
+        }
+        
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: #6366f1;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-description {
+            color: #94a3b8;
+        }
+        
+        .stats {
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+        
+        .stat-item {
+            padding: 2rem;
+        }
+        
+        .stat-value {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #6366f1, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            margin-top: 0.5rem;
+        }
+        
+        .pricing {
+            padding: 6rem 2rem;
+            background: rgba(30, 41, 59, 0.5);
+        }
+        
+        .pricing-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .pricing-card {
+            background: #1e293b;
+            border: 2px solid #334155;
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            border-color: #6366f1;
+            transform: scale(1.05);
+        }
+        
+        .pricing-card.featured {
+            border-color: #6366f1;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(16, 185, 129, 0.1));
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+        
+        .price-label {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        
+        .features-list {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .features-list li {
+            padding: 0.5rem 0;
+            color: #94a3b8;
+        }
+        
+        .features-list li::before {
+            content: '✓ ';
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid #334155;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover {
+            color: #6366f1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="logo">⚡</div>
+            <h1>PayLoom Instants</h1>
+            <p class="tagline">Complete Payment Infrastructure with Built-in Escrow for Africa</p>
+            <div class="cta-buttons">
+                <a href="client-onboarding.html" class="btn btn-primary">Get Started Free</a>
+                <a href="client-app.html" class="btn btn-secondary">View Dashboard</a>
+                <a href="admin-app.html" class="btn btn-secondary">Admin Portal</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-container">
+            <h2 class="section-title">7 Powerful APIs in One Platform</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3 class="feature-title">Collections API</h3>
+                    <p class="feature-description">Accept payments via M-Pesa, cards, and bank transfers with automatic reconciliation</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3 class="feature-title">Escrow API</h3>
+                    <p class="feature-description">Hold funds securely until conditions are met. Perfect for marketplaces and freelance platforms</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💸</div>
+                    <h3 class="feature-title">Payouts API</h3>
+                    <p class="feature-description">Send money to M-Pesa, bank accounts, or internal wallets with smart routing</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">👛</div>
+                    <h3 class="feature-title">Wallet API</h3>
+                    <p class="feature-description">Manage user balances with available and locked funds tracking</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3 class="feature-title">Ledger API</h3>
+                    <p class="feature-description">Double-entry bookkeeping with automatic reconciliation and audit trails</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🪪</div>
+                    <h3 class="feature-title">KYC API</h3>
+                    <p class="feature-description">Identity verification with trust scoring and compliance management</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3 class="feature-title">Webhooks API</h3>
+                    <p class="feature-description">Real-time event notifications with automatic retry and signature verification</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <h2 class="section-title">Built for Scale</h2>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-value">99.9%</div>
+                <div class="stat-label">Uptime SLA</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">142ms</div>
+                <div class="stat-label">Avg Response Time</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">7</div>
+                <div class="stat-label">Core APIs</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">24/7</div>
+                <div class="stat-label">Support</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="pricing-container">
+            <h2 class="section-title">Simple, Transparent Pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Test Mode</h3>
+                    <div class="price">Free</div>
+                    <p class="price-label">Forever</p>
+                    <ul class="features-list">
+                        <li>Sandbox environment</li>
+                        <li>All API access</li>
+                        <li>Test wallets</li>
+                        <li>Full documentation</li>
+                        <li>Community support</li>
+                    </ul>
+                    <a href="client-onboarding.html" class="btn btn-secondary" style="width: 100%;">Get Started</a>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <h3>Live Mode</h3>
+                    <div class="price">2-6%</div>
+                    <p class="price-label">Per transaction</p>
+                    <ul class="features-list">
+                        <li>Collections: 2.5%</li>
+                        <li>Escrow: 2.0%</li>
+                        <li>Payouts: 1.5%</li>
+                        <li>Real money processing</li>
+                        <li>Priority support</li>
+                        <li>Custom integrations</li>
+                    </ul>
+                    <a href="client-onboarding.html" class="btn btn-primary" style="width: 100%;">Enable Live Mode</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">Custom</div>
+                    <p class="price-label">Contact us</p>
+                    <ul class="features-list">
+                        <li>Volume discounts</li>
+                        <li>Dedicated support</li>
+                        <li>SLA guarantees</li>
+                        <li>Custom features</li>
+                        <li>White-label options</li>
+                    </ul>
+                    <a href="mailto:sales@payloom.com" class="btn btn-secondary" style="width: 100%;">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="#">Documentation</a>
+            <a href="#">API Reference</a>
+            <a href="#">GitHub</a>
+            <a href="#">Support</a>
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+        </div>
+        <p style="color: #94a3b8;">&copy; 2026 PayLoom Instants. Built for Africa.</p>
+    </footer>
+</body>
+</html>

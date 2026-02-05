@@ -1,0 +1,981 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayLoom Admin Dashboard</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #6366f1;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --dark: #0f172a;
+            --card: #1e293b;
+            --border: #334155;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: var(--text);
+            min-height: 100vh;
+        }
+        
+        .app-container {
+            display: flex;
+            height: 100vh;
+        }
+        
+        .sidebar {
+            width: 260px;
+            background: var(--card);
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+        
+        .logo {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--success));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .logo-subtitle {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+        
+        .nav-section {
+            padding: 1rem 0;
+        }
+        
+        .nav-section-title {
+            padding: 0 1.5rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .nav-item {
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--text);
+        }
+        
+        .nav-item:hover {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary);
+        }
+        
+        .nav-item.active {
+            background: var(--primary);
+            color: white;
+            border-left: 4px solid white;
+        }
+        
+        .nav-label {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .badge-count {
+            background: var(--danger);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+        
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .topbar {
+            height: 70px;
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+        }
+        
+        .topbar-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--success));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+        
+        .content-area {
+            flex: 1;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+        
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        
+        .btn {
+            padding: 0.625rem 1.25rem;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-success {
+            background: var(--success);
+            color: white;
+        }
+        
+        .btn-danger {
+            background: var(--danger);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+        
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th {
+            text-align: left;
+            padding: 0.875rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-bottom: 1px solid var(--border);
+            text-transform: uppercase;
+        }
+        
+        td {
+            padding: 1rem 0.875rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        tr:hover {
+            background: rgba(99, 102, 241, 0.05);
+        }
+        
+        .badge {
+            padding: 0.375rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .badge-success {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--success);
+        }
+        
+        .badge-pending {
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--warning);
+        }
+        
+        .badge-rejected {
+            background: rgba(239, 68, 68, 0.2);
+            color: var(--danger);
+        }
+        
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        
+        .modal-content {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .close-btn {
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .info-row {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .info-label {
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        
+        .info-value {
+            color: var(--text);
+        }
+        
+        .document-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .document-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .document-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        .document-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .document-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        
+        .alert {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border: 1px solid;
+        }
+        
+        .alert-warning {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: var(--warning);
+            color: var(--warning);
+        }
+        
+        .alert-success {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: var(--success);
+            color: var(--success);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            font-family: inherit;
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        const API_BASE = 'http://localhost:3000';
+
+        function AdminApp() {
+            const [currentTab, setCurrentTab] = useState('overview');
+            const [pendingAccounts, setPendingAccounts] = useState([]);
+            const [kycReviews, setKycReviews] = useState([]);
+            const [stats, setStats] = useState({
+                totalRevenue: 'KES 156M',
+                totalAccounts: 1247,
+                pendingApprovals: 3,
+                activeTransactions: 847
+            });
+            const [selectedAccount, setSelectedAccount] = useState(null);
+            const [showModal, setShowModal] = useState(false);
+
+            useEffect(() => {
+                loadPendingAccounts();
+                loadKYCReviews();
+            }, []);
+
+            const loadPendingAccounts = async () => {
+                try {
+                    const response = await fetch(`${API_BASE}/api/v1/admin/pending-accounts`);
+                    if (response.ok) {
+                        const data = await response.json();
+                        setPendingAccounts(data.accounts || []);
+                    } else {
+                        // Fallback to mock data
+                        setPendingAccounts([
+                            {
+                                id: '1',
+                                business_name: 'ABC Marketplace',
+                                email: 'admin@abc.com',
+                                phone: '+254 712 345 678',
+                                use_case: 'E-commerce Platform',
+                                created_at: '2 hours ago',
+                                status: 'pending'
+                            },
+                            {
+                                id: '2',
+                                business_name: 'FreelanceHub Kenya',
+                                email: 'contact@freelance.co.ke',
+                                phone: '+254 798 765 432',
+                                use_case: 'Freelance Marketplace',
+                                created_at: '5 hours ago',
+                                status: 'pending'
+                            }
+                        ]);
+                    }
+                } catch (error) {
+                    console.error('Failed to load pending accounts:', error);
+                    // Fallback to mock data
+                    setPendingAccounts([
+                        {
+                            id: '1',
+                            business_name: 'ABC Marketplace',
+                            email: 'admin@abc.com',
+                            phone: '+254 712 345 678',
+                            use_case: 'E-commerce Platform',
+                            created_at: '2 hours ago',
+                            status: 'pending'
+                        }
+                    ]);
+                }
+            };
+
+            const loadKYCReviews = async () => {
+                try {
+                    const response = await fetch(`${API_BASE}/api/v1/admin/kyc-reviews`);
+                    if (response.ok) {
+                        const data = await response.json();
+                        setKycReviews(data.reviews || []);
+                    } else {
+                        // Fallback to mock data
+                        setKycReviews([
+                            {
+                                id: '1',
+                                business_name: 'XYZ Traders Ltd',
+                                email: 'ceo@xyz.com',
+                                submitted_at: '12 hours ago',
+                                documents: {
+                                    company_reg: true,
+                                    tax_cert: true,
+                                    business_permit: true,
+                                    owner_id: true,
+                                    selfie: true,
+                                    bank_statement: true
+                                },
+                                status: 'pending'
+                            }
+                        ]);
+                    }
+                } catch (error) {
+                    console.error('Failed to load KYC reviews:', error);
+                    // Fallback to mock data
+                    setKycReviews([
+                        {
+                            id: '1',
+                            business_name: 'XYZ Traders Ltd',
+                            email: 'ceo@xyz.com',
+                            submitted_at: '12 hours ago',
+                            documents: {
+                                company_reg: true,
+                                tax_cert: true,
+                                business_permit: true,
+                                owner_id: true,
+                                selfie: true,
+                                bank_statement: true
+                            },
+                            status: 'pending'
+                        }
+                    ]);
+                }
+            };
+
+            const approveAccount = async (accountId, enableLive = false) => {
+                try {
+                    const response = await fetch(`${API_BASE}/api/v1/admin/approve/${accountId}`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ approve_live_mode: enableLive })
+                    });
+
+                    if (response.ok) {
+                        alert('Account approved successfully!');
+                        loadPendingAccounts();
+                        setShowModal(false);
+                    }
+                } catch (error) {
+                    console.error('Approval error:', error);
+                    alert('Failed to approve account');
+                }
+            };
+
+            const rejectAccount = async (accountId, reason) => {
+                try {
+                    const response = await fetch(`${API_BASE}/api/v1/admin/reject/${accountId}`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ reason })
+                    });
+
+                    if (response.ok) {
+                        alert('Account rejected');
+                        loadPendingAccounts();
+                        setShowModal(false);
+                    }
+                } catch (error) {
+                    console.error('Rejection error:', error);
+                    alert('Failed to reject account');
+                }
+            };
+
+            return (
+                <div className="app-container">
+                    <Sidebar currentTab={currentTab} setCurrentTab={setCurrentTab} pendingCount={pendingAccounts.length} />
+                    
+                    <div className="main-content">
+                        <Topbar />
+                        
+                        <div className="content-area">
+                            {currentTab === 'overview' && <Overview stats={stats} />}
+                            {currentTab === 'pending' && (
+                                <PendingAccounts 
+                                    accounts={pendingAccounts} 
+                                    onViewDetails={(account) => {
+                                        setSelectedAccount(account);
+                                        setShowModal(true);
+                                    }}
+                                />
+                            )}
+                            {currentTab === 'kyc' && (
+                                <KYCReviews 
+                                    reviews={kycReviews}
+                                    onViewDetails={(review) => {
+                                        setSelectedAccount(review);
+                                        setShowModal(true);
+                                    }}
+                                />
+                            )}
+                            {currentTab === 'accounts' && <AllAccounts />}
+                            {currentTab === 'transactions' && <Transactions />}
+                            {currentTab === 'api-logs' && <APILogs />}
+                            {currentTab === 'settings' && <AdminSettings />}
+                        </div>
+                    </div>
+
+                    {showModal && selectedAccount && (
+                        <AccountDetailsModal
+                            account={selectedAccount}
+                            onClose={() => setShowModal(false)}
+                            onApprove={(enableLive) => approveAccount(selectedAccount.id, enableLive)}
+                            onReject={(reason) => rejectAccount(selectedAccount.id, reason)}
+                        />
+                    )}
+                </div>
+            );
+        }
+
+        function Sidebar({ currentTab, setCurrentTab, pendingCount }) {
+            const navItems = [
+                { id: 'overview', icon: '📊', label: 'Overview' },
+                { id: 'pending', icon: '⏳', label: 'Pending Approvals', count: pendingCount },
+                { id: 'kyc', icon: '🔐', label: 'KYC Reviews' },
+                { id: 'accounts', icon: '👥', label: 'All Accounts' },
+                { id: 'transactions', icon: '💳', label: 'Transactions' },
+                { id: 'api-logs', icon: '📝', label: 'API Logs' },
+                { id: 'settings', icon: '⚙️', label: 'Settings' }
+            ];
+
+            return (
+                <div className="sidebar">
+                    <div className="logo">
+                        <div className="logo-text">⚡ PayLoom</div>
+                        <div className="logo-subtitle">Admin Dashboard</div>
+                    </div>
+                    
+                    <nav>
+                        <div className="nav-section">
+                            <div className="nav-section-title">Main</div>
+                            {navItems.map(item => (
+                                <div 
+                                    key={item.id}
+                                    className={`nav-item ${currentTab === item.id ? 'active' : ''}`}
+                                    onClick={() => setCurrentTab(item.id)}
+                                >
+                                    <div className="nav-label">
+                                        <span>{item.icon}</span>
+                                        <span>{item.label}</span>
+                                    </div>
+                                    {item.count > 0 && (
+                                        <span className="badge-count">{item.count}</span>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+                    </nav>
+                </div>
+            );
+        }
+
+        function Topbar() {
+            return (
+                <div className="topbar">
+                    <div className="topbar-title">Admin Dashboard</div>
+                    <div className="user-menu">
+                        <span style={{ fontSize: '0.9rem' }}>Admin User</span>
+                        <div className="user-avatar">AU</div>
+                    </div>
+                </div>
+            );
+        }
+
+        function Overview({ stats }) {
+            return (
+                <div>
+                    <h2 style={{ marginBottom: '1.5rem', fontSize: '1.75rem' }}>Platform Overview</h2>
+                    
+                    <div className="stats-grid">
+                        <div className="stat-card">
+                            <div className="stat-value" style={{ color: 'var(--success)' }}>{stats.totalRevenue}</div>
+                            <div className="stat-label">Total Revenue</div>
+                        </div>
+                        <div className="stat-card">
+                            <div className="stat-value" style={{ color: 'var(--primary)' }}>{stats.totalAccounts}</div>
+                            <div className="stat-label">Total Accounts</div>
+                        </div>
+                        <div className="stat-card">
+                            <div className="stat-value" style={{ color: 'var(--warning)' }}>{stats.pendingApprovals}</div>
+                            <div className="stat-label">Pending Approvals</div>
+                        </div>
+                        <div className="stat-card">
+                            <div className="stat-value" style={{ color: 'var(--text)' }}>{stats.activeTransactions}</div>
+                            <div className="stat-label">Active Transactions</div>
+                        </div>
+                    </div>
+
+                    <div className="card">
+                        <div className="card-title">Recent Activity</div>
+                        <p style={{ color: 'var(--text-muted)' }}>Platform activity and metrics will appear here</p>
+                    </div>
+                </div>
+            );
+        }
+
+        function PendingAccounts({ accounts, onViewDetails }) {
+            return (
+                <div>
+                    <h2 style={{ marginBottom: '1.5rem', fontSize: '1.75rem' }}>
+                        Pending Account Approvals ({accounts.length})
+                    </h2>
+                    
+                    <div className="card">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Business Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Use Case</th>
+                                    <th>Submitted</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {accounts.map(account => (
+                                    <tr key={account.id}>
+                                        <td><strong>{account.business_name}</strong></td>
+                                        <td>{account.email}</td>
+                                        <td>{account.phone}</td>
+                                        <td>{account.use_case}</td>
+                                        <td>{account.created_at}</td>
+                                        <td>
+                                            <button 
+                                                className="btn btn-primary" 
+                                                style={{ fontSize: '0.8rem', padding: '0.5rem 1rem' }}
+                                                onClick={() => onViewDetails(account)}
+                                            >
+                                                Review
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            );
+        }
+
+        function KYCReviews({ reviews, onViewDetails }) {
+            return (
+                <div>
+                    <h2 style={{ marginBottom: '1.5rem', fontSize: '1.75rem' }}>
+                        KYC Document Reviews ({reviews.length})
+                    </h2>
+                    
+                    <div className="card">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Business Name</th>
+                                    <th>Email</th>
+                                    <th>Documents</th>
+                                    <th>Submitted</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {reviews.map(review => (
+                                    <tr key={review.id}>
+                                        <td><strong>{review.business_name}</strong></td>
+                                        <td>{review.email}</td>
+                                        <td>
+                                            <span className="badge badge-success">✓ All Uploaded</span>
+                                        </td>
+                                        <td>{review.submitted_at}</td>
+                                        <td>
+                                            <button 
+                                                className="btn btn-primary" 
+                                                style={{ fontSize: '0.8rem', padding: '0.5rem 1rem' }}
+                                                onClick={() => onViewDetails(review)}
+                                            >
+                                                Review Documents
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            );
+        }
+
+        function AllAccounts() {
+            return (
+                <div>
+                    <h2 style={{ marginBottom: '1.5rem', fontSize: '1.75rem' }}>All Accounts</h2>
+                    <div className="card">
+                        <p style={{ color: 'var(--text-muted)' }}>List of all registered accounts</p>
+                    </div>
+                </div>
+            );
+        }
+
+        function Transactions() {
+            return (
+                <div>
+                    <h2 style={{ marginBottom: '1.5rem', fontSize: '1.75rem' }}>Platform Transactions</h2>
+                    <div className="card">
+                        <p style={{ color: 'var(--text-muted)' }}>All platform transactions across accounts</p>
+                    </div>
+                </div>
+            );
+        }
+
+        function APILogs() {
+            return (
+                <div>
+                    <h2 style={{ marginBottom: '1.5rem', fontSize: '1.75rem' }}>API Request Logs</h2>
+                    <div className="card">
+                        <p style={{ color: 'var(--text-muted)' }}>Monitor API activity and performance</p>
+                    </div>
+                </div>
+            );
+        }
+
+        function AdminSettings() {
+            return (
+                <div>
+                    <h2 style={{ marginBottom: '1.5rem', fontSize: '1.75rem' }}>Admin Settings</h2>
+                    <div className="card">
+                        <p style={{ color: 'var(--text-muted)' }}>Configure platform settings</p>
+                    </div>
+                </div>
+            );
+        }
+
+        function AccountDetailsModal({ account, onClose, onApprove, onReject }) {
+            const [rejectReason, setRejectReason] = useState('');
+            const [showRejectForm, setShowRejectForm] = useState(false);
+
+            const isKYC = account.documents !== undefined;
+
+            return (
+                <div className="modal" onClick={onClose}>
+                    <div className="modal-content" onClick={e => e.stopPropagation()}>
+                        <div className="modal-header">
+                            <h3 className="modal-title">
+                                {isKYC ? '🔐 KYC Document Review' : '⏳ Account Review'}
+                            </h3>
+                            <button className="close-btn" onClick={onClose}>×</button>
+                        </div>
+
+                        <div>
+                            <div className="info-row">
+                                <div className="info-label">Business Name</div>
+                                <div className="info-value"><strong>{account.business_name}</strong></div>
+                            </div>
+                            <div className="info-row">
+                                <div className="info-label">Email</div>
+                                <div className="info-value">{account.email}</div>
+                            </div>
+                            {account.phone && (
+                                <div className="info-row">
+                                    <div className="info-label">Phone</div>
+                                    <div className="info-value">{account.phone}</div>
+                                </div>
+                            )}
+                            {account.use_case && (
+                                <div className="info-row">
+                                    <div className="info-label">Use Case</div>
+                                    <div className="info-value">{account.use_case}</div>
+                                </div>
+                            )}
+                        </div>
+
+                        {isKYC && (
+                            <div>
+                                <h4 style={{ marginTop: '1.5rem', marginBottom: '1rem' }}>Uploaded Documents</h4>
+                                <div className="document-grid">
+                                    <div className="document-card">
+                                        <div className="document-icon">📄</div>
+                                        <div className="document-label">Company Reg</div>
+                                    </div>
+                                    <div className="document-card">
+                                        <div className="document-icon">📋</div>
+                                        <div className="document-label">Tax Cert</div>
+                                    </div>
+                                    <div className="document-card">
+                                        <div className="document-icon">📜</div>
+                                        <div className="document-label">Permit</div>
+                                    </div>
+                                    <div className="document-card">
+                                        <div className="document-icon">🪪</div>
+                                        <div className="document-label">Owner ID</div>
+                                    </div>
+                                    <div className="document-card">
+                                        <div className="document-icon">🤳</div>
+                                        <div className="document-label">Selfie</div>
+                                    </div>
+                                    <div className="document-card">
+                                        <div className="document-icon">🏦</div>
+                                        <div className="document-label">Bank Statement</div>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+
+                        {!showRejectForm ? (
+                            <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem' }}>
+                                <button 
+                                    className="btn btn-success" 
+                                    style={{ flex: 1 }}
+                                    onClick={() => onApprove(isKYC)}
+                                >
+                                    ✓ Approve{isKYC ? ' Live Mode' : ' Test Access'}
+                                </button>
+                                <button 
+                                    className="btn btn-danger" 
+                                    style={{ flex: 1 }}
+                                    onClick={() => setShowRejectForm(true)}
+                                >
+                                    ✗ Reject
+                                </button>
+                            </div>
+                        ) : (
+                            <div style={{ marginTop: '2rem' }}>
+                                <div className="form-group">
+                                    <label className="form-label">Rejection Reason</label>
+                                    <textarea 
+                                        className="form-textarea"
+                                        placeholder="Explain why this application is being rejected..."
+                                        value={rejectReason}
+                                        onChange={(e) => setRejectReason(e.target.value)}
+                                    />
+                                </div>
+                                <div style={{ display: 'flex', gap: '1rem' }}>
+                                    <button 
+                                        className="btn btn-danger" 
+                                        style={{ flex: 1 }}
+                                        onClick={() => onReject(rejectReason)}
+                                        disabled={!rejectReason}
+                                    >
+                                        Confirm Rejection
+                                    </button>
+                                    <button 
+                                        className="btn btn-secondary" 
+                                        style={{ flex: 1 }}
+                                        onClick={() => setShowRejectForm(false)}
+                                    >
+                                        Cancel
+                                    </button>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<AdminApp />, document.getElementById('root'));
+    </script>
+</body>
+</html>

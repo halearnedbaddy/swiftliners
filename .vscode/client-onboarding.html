@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started - PayLoom Instants</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --success: #10b981;
+            --dark: #0f172a;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --card: #1e293b;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Animated background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+            animation: gradientMove 15s ease infinite;
+            z-index: 0;
+        }
+        
+        @keyframes gradientMove {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(10%, 10%); }
+        }
+        
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 500px;
+            width: 100%;
+        }
+        
+        .card {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .logo {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .logo-text {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--success) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+        }
+        
+        .logo-subtitle {
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        h2 {
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            font-size: 1.75rem;
+        }
+        
+        .subtitle {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .required {
+            color: #ef4444;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text);
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(15, 23, 42, 0.8);
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(99, 102, 241, 0.1);
+            border-color: var(--primary);
+        }
+        
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+        
+        .step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+        
+        .step::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            width: 100%;
+            height: 2px;
+            background: var(--border);
+            z-index: -1;
+        }
+        
+        .step:last-child::after {
+            display: none;
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--card);
+            border: 2px solid var(--border);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: all 0.3s ease;
+        }
+        
+        .step.active .step-number {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+        
+        .step.completed .step-number {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
+        }
+        
+        .step-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        
+        .step.active .step-label {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .alert {
+            padding: 1rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            border: 1px solid;
+        }
+        
+        .alert-success {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: var(--success);
+            color: var(--success);
+        }
+        
+        .alert-info {
+            background: rgba(99, 102, 241, 0.1);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        
+        .alert-warning {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: #f59e0b;
+            color: #f59e0b;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .api-key-box {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .api-key-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .api-key-value {
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: var(--text);
+            word-break: break-all;
+            padding: 0.75rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .copy-btn {
+            position: absolute;
+            right: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 0.5rem 1rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .copy-btn:hover {
+            background: var(--primary-dark);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(99, 102, 241, 0.05);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 12px;
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="logo">
+                <div class="logo-text">⚡ PayLoom Instants</div>
+                <div class="logo-subtitle">Complete Payment Infrastructure</div>
+            </div>
+            
+            <!-- Progress Steps -->
+            <div class="steps">
+                <div class="step active" id="step1">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Details</div>
+                </div>
+                <div class="step" id="step2">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Review</div>
+                </div>
+                <div class="step" id="step3">
+                    <div class="step-number">3</div>
+                    <div class="step-label">API Keys</div>
+                </div>
+            </div>
+            
+            <!-- Form Step 1: Business Details -->
+            <div id="form-step-1">
+                <h2>Get Started</h2>
+                <p class="subtitle">Create your account and get instant API access</p>
+                
+                <form id="signup-form">
+                    <div class="form-group">
+                        <label>Business Name <span class="required">*</span></label>
+                        <input type="text" id="business-name" required placeholder="Your Company Ltd">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" required placeholder="admin@yourcompany.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="phone" required placeholder="+254 712 345 678">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Password <span class="required">*</span></label>
+                        <input type="password" id="password" required placeholder="Minimum 8 characters">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Use Case</label>
+                        <select id="use-case">
+                            <option value="">Select your use case</option>
+                            <option value="marketplace">Marketplace / E-commerce</option>
+                            <option value="freelance">Freelance Platform</option>
+                            <option value="saas">SaaS / Subscription</option>
+                            <option value="fintech">Fintech Product</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Tell us about your project (optional)</label>
+                        <textarea id="project-description" placeholder="What are you building?"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Continue →</button>
+                </form>
+            </div>
+            
+            <!-- Form Step 2: Review & Submit -->
+            <div id="form-step-2" class="hidden">
+                <h2>Review Your Details</h2>
+                <p class="subtitle">Please confirm your information</p>
+                
+                <div class="api-key-box">
+                    <div class="api-key-label">Business Name</div>
+                    <div id="review-business-name" style="padding: 0.5rem; color: var(--text);"></div>
+                </div>
+                
+                <div class="api-key-box">
+                    <div class="api-key-label">Email</div>
+                    <div id="review-email" style="padding: 0.5rem; color: var(--text);"></div>
+                </div>
+                
+                <div class="api-key-box">
+                    <div class="api-key-label">Phone</div>
+                    <div id="review-phone" style="padding: 0.5rem; color: var(--text);"></div>
+                </div>
+                
+                <div class="alert alert-info">
+                    <strong>📧 Email Verification</strong><br>
+                    We'll send a verification link to your email address.
+                </div>
+                
+                <button onclick="submitSignup()" class="btn" id="submit-btn">
+                    Create Account
+                </button>
+                <button onclick="goToStep(1)" class="btn btn-secondary" style="margin-top: 1rem;">
+                    ← Back
+                </button>
+            </div>
+            
+            <!-- Form Step 3: API Keys -->
+            <div id="form-step-3" class="hidden">
+                <h2>🎉 Account Created!</h2>
+                <p class="subtitle">Your test API keys are ready</p>
+                
+                <div class="alert alert-warning">
+                    <strong>⚠️ TEST MODE</strong><br>
+                    You're in test mode. Complete verification to enable live transactions.
+                </div>
+                
+                <div class="api-key-box">
+                    <div class="api-key-label">Public Test Key</div>
+                    <div class="api-key-value" style="position: relative;">
+                        <span id="public-key">pk_test_loading...</span>
+                        <button class="copy-btn" onclick="copyKey('public-key')">📋 Copy</button>
+                    </div>
+                </div>
+                
+                <div class="api-key-box">
+                    <div class="api-key-label">Secret Test Key</div>
+                    <div class="api-key-value" style="position: relative;">
+                        <span id="secret-key">sk_test_loading...</span>
+                        <button class="copy-btn" onclick="copyKey('secret-key')">📋 Copy</button>
+                    </div>
+                </div>
+                
+                <div class="alert alert-success">
+                    <strong>✅ Email Sent</strong><br>
+                    Check your inbox to verify your email address.
+                </div>
+                
+                <div class="feature-grid">
+                    <div class="feature">
+                        <div class="feature-icon">💳</div>
+                        <div class="feature-label">Collections</div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🔒</div>
+                        <div class="feature-label">Escrow</div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">💸</div>
+                        <div class="feature-label">Payouts</div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">👛</div>
+                        <div class="feature-label">Wallets</div>
+                    </div>
+                </div>
+                
+                <button onclick="goToDashboard()" class="btn" style="margin-top: 2rem;">
+                    Go to Dashboard →
+                </button>
+                
+                <div style="text-align: center; margin-top: 1.5rem;">
+                    <a href="https://docs.payloom.com" style="color: var(--primary); text-decoration: none;">
+                        📚 Read Documentation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const API_BASE = 'http://localhost:3000';
+        let accountData = {};
+        
+        // Form submission
+        document.getElementById('signup-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            accountData = {
+                business_name: document.getElementById('business-name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                password: document.getElementById('password').value,
+                use_case: document.getElementById('use-case').value,
+                project_description: document.getElementById('project-description').value
+            };
+            
+            // Show review step
+            document.getElementById('review-business-name').textContent = accountData.business_name;
+            document.getElementById('review-email').textContent = accountData.email;
+            document.getElementById('review-phone').textContent = accountData.phone;
+            
+            goToStep(2);
+        });
+        
+        // Submit signup
+        async function submitSignup() {
+            const btn = document.getElementById('submit-btn');
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner"></span>Creating account...';
+            
+            try {
+                const response = await fetch(`${API_BASE}/v1/auth/signup`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(accountData)
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    // Show API keys
+                    document.getElementById('public-key').textContent = data.test_keys.public_test;
+                    document.getElementById('secret-key').textContent = data.test_keys.secret_test;
+                    
+                    goToStep(3);
+                } else {
+                    alert('Error: ' + (data.error || 'Failed to create account'));
+                    btn.disabled = false;
+                    btn.textContent = 'Create Account';
+                }
+            } catch (error) {
+                console.error('Signup error:', error);
+                alert('Failed to connect to server. Please try again.');
+                btn.disabled = false;
+                btn.textContent = 'Create Account';
+            }
+        }
+        
+        // Navigation functions
+        function goToStep(step) {
+            // Hide all steps
+            document.getElementById('form-step-1').classList.add('hidden');
+            document.getElementById('form-step-2').classList.add('hidden');
+            document.getElementById('form-step-3').classList.add('hidden');
+            
+            // Remove active/completed from all steps
+            document.querySelectorAll('.step').forEach(s => {
+                s.classList.remove('active', 'completed');
+            });
+            
+            // Show current step
+            document.getElementById(`form-step-${step}`).classList.remove('hidden');
+            document.getElementById(`step${step}`).classList.add('active');
+            
+            // Mark previous steps as completed
+            for (let i = 1; i < step; i++) {
+                document.getElementById(`step${i}`).classList.add('completed');
+            }
+        }
+        
+        // Copy API key
+        function copyKey(elementId) {
+            const text = document.getElementById(elementId).textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Copied to clipboard!');
+            });
+        }
+        
+        // Go to dashboard
+        function goToDashboard() {
+            window.location.href = 'admin-dashboard.html';
+        }
+    </script>
+</body>
+</html>

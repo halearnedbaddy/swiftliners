@@ -1,0 +1,3057 @@
+2026-02-04 22:16:08 [ERROR]: Failed to initialize email transporter: nodemailer.createTransporter is not a function
+TypeError: nodemailer.createTransporter is not a function
+    at EmailService.initializeTransporter (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\services\emailService.js:12:37)
+    at new EmailService (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\services\emailService.js:7:10)
+    at Object.<anonymous> (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\services\emailService.js:430:22)
+    at Module._compile (node:internal/modules/cjs/loader:1761:14)
+    at Object..js (node:internal/modules/cjs/loader:1893:10)
+    at Module.load (node:internal/modules/cjs/loader:1481:32)
+    at Module._load (node:internal/modules/cjs/loader:1300:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.require (node:internal/modules/cjs/loader:1504:12)
+{
+  "service": "payloom-api"
+}
+2026-02-04 22:16:44 [WARN]: Email credentials not configured. Using mock email service.
+{
+  "service": "payloom-api"
+}
+2026-02-04 22:17:32 [WARN]: Email credentials not configured. Using mock email service.
+{
+  "service": "payloom-api"
+}
+2026-02-04 23:15:04 [WARN]: Email credentials not configured. Using mock email service.
+{
+  "service": "payloom-api"
+}
+2026-02-04 23:40:24 [WARN]: Email credentials not configured. Using mock email service.
+{
+  "service": "payloom-api"
+}
+2026-02-04 23:40:45 [WARN]: Email credentials not configured. Using mock email service.
+{
+  "service": "payloom-api"
+}
+2026-02-05 11:09:21 [WARN]: Email credentials not configured. Using mock email service.
+{
+  "service": "payloom-api"
+}
+2026-02-05 11:09:28 [WARN]: Email credentials not configured. Using mock email service.
+{
+  "service": "payloom-api"
+}
+2026-02-05 11:10:30 [WARN]: Email credentials not configured. Using mock email service.
+{
+  "service": "payloom-api"
+}
+2026-02-05 11:28:14 [WARN]: Email credentials not configured. Using mock email service.
+{
+  "service": "payloom-api"
+}
+2026-02-05 11:29:05 [WARN]: Email credentials not configured. Using mock email service.
+{
+  "service": "payloom-api"
+}
+2026-02-05 11:35:25 [WARN]: Email credentials not configured. Using mock email service.
+{
+  "service": "payloom-api"
+}
+2026-02-05 11:44:04 [WARN]: Email credentials not configured. Using mock email service.
+{
+  "service": "payloom-api"
+}
+2026-02-05 11:44:11 [WARN]: Email credentials not configured. Using mock email service.
+{
+  "service": "payloom-api"
+}
+2026-02-05 11:44:30 [WARN]: Email credentials not configured. Using mock email service.
+{
+  "service": "payloom-api"
+}
+2026-02-05 11:44:44 [WARN]: Email credentials not configured. Using mock email service.
+{
+  "service": "payloom-api"
+}
+2026-02-05 11:45:00 [INFO]: Mongoose disconnected
+{
+  "service": "payloom-api"
+}
+2026-02-05 11:45:14 [INFO]: Mongoose disconnected
+{
+  "service": "payloom-api"
+}
+2026-02-05 11:45:25 [WARN]: Email credentials not configured. Using mock email service.
+{
+  "service": "payloom-api"
+}
+2026-02-05 11:45:55 [INFO]: Mongoose disconnected
+{
+  "service": "payloom-api"
+}
+2026-02-05 11:45:55 [ERROR]: Database connection failed: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+MongooseServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at _handleConnectionErrors (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1169:11)
+    at NativeConnection.openUri (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1100:11)
+    at async connectDB (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\config\database.js:6:18)
+    at async startServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\server.js:259:5)
+{
+  "service": "payloom-api",
+  "errorLabelSet": {},
+  "reason": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 156859329,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  },
+  "cause": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 156859329,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  }
+}
+2026-02-05 11:45:55 [WARN]: Continuing without database connection for testing...
+{
+  "service": "payloom-api"
+}
+2026-02-05 11:45:55 [ERROR]: Mongoose connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at Topology.selectServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:327:38)
+    at async Topology._connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:200:28)
+    at async Topology.connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:152:13)
+    at async topologyConnect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:264:17)
+    at async MongoClient._connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:277:13)
+    at async MongoClient.connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:202:13)
+    at async NativeConnection.createClient (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js:351:3)
+    at async NativeConnection.openUri (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1098:5)
+    at async connectDB (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\config\database.js:6:18)
+    at async startServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\server.js:259:5)
+{
+  "service": "payloom-api",
+  "errorLabelSet": {},
+  "reason": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 156859329,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  },
+  "cause": {
+    "errorLabelSet": {},
+    "beforeHandshake": false
+  }
+}
+2026-02-05 11:52:58 [WARN]: Email credentials not configured. Using mock email service.
+{
+  "service": "payloom-api"
+}
+2026-02-05 11:53:28 [INFO]: Mongoose disconnected
+{
+  "service": "payloom-api"
+}
+2026-02-05 11:53:28 [ERROR]: Database connection failed: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+MongooseServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at _handleConnectionErrors (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1169:11)
+    at NativeConnection.openUri (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1100:11)
+    at async connectDB (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\config\database.js:6:18)
+    at async startServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\server.js:259:5)
+{
+  "service": "payloom-api",
+  "errorLabelSet": {},
+  "reason": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 157312450,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  },
+  "cause": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 157312450,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  }
+}
+2026-02-05 11:53:28 [WARN]: Continuing without database connection for testing...
+{
+  "service": "payloom-api"
+}
+2026-02-05 11:53:28 [ERROR]: Mongoose connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at Topology.selectServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:327:38)
+    at async Topology._connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:200:28)
+    at async Topology.connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:152:13)
+    at async topologyConnect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:264:17)
+    at async MongoClient._connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:277:13)
+    at async MongoClient.connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:202:13)
+    at async NativeConnection.createClient (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js:351:3)
+    at async NativeConnection.openUri (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1098:5)
+    at async connectDB (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\config\database.js:6:18)
+    at async startServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\server.js:259:5)
+{
+  "service": "payloom-api",
+  "errorLabelSet": {},
+  "reason": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 157312450,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  },
+  "cause": {
+    "errorLabelSet": {},
+    "beforeHandshake": false
+  }
+}
+2026-02-05 12:04:01 [ERROR]: Registration error: Operation `users.findOne()` buffering timed out after 10000ms
+MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:187:23)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+{
+  "service": "payloom-api"
+}
+2026-02-05 12:20:31 [WARN]: Email credentials not configured. Using mock email service.
+{
+  "service": "payloom-api"
+}
+2026-02-05 12:21:01 [INFO]: Mongoose disconnected
+{
+  "service": "payloom-api"
+}
+2026-02-05 12:21:01 [ERROR]: Database connection failed: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+MongooseServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at _handleConnectionErrors (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1169:11)
+    at NativeConnection.openUri (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1100:11)
+    at async connectDB (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\config\database.js:6:18)
+    at async startServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\server.js:259:5)
+{
+  "service": "payloom-api",
+  "errorLabelSet": {},
+  "reason": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 158965605,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  },
+  "cause": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 158965605,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  }
+}
+2026-02-05 12:21:01 [WARN]: Continuing without database connection for testing...
+{
+  "service": "payloom-api"
+}
+2026-02-05 12:21:01 [ERROR]: Mongoose connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at Topology.selectServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:327:38)
+    at async Topology._connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:200:28)
+    at async Topology.connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:152:13)
+    at async topologyConnect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:264:17)
+    at async MongoClient._connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:277:13)
+    at async MongoClient.connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:202:13)
+    at async NativeConnection.createClient (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js:351:3)
+    at async NativeConnection.openUri (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1098:5)
+    at async connectDB (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\config\database.js:6:18)
+    at async startServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\server.js:259:5)
+{
+  "service": "payloom-api",
+  "errorLabelSet": {},
+  "reason": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 158965605,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  },
+  "cause": {
+    "errorLabelSet": {},
+    "beforeHandshake": false
+  }
+}
+2026-02-05 12:21:12 [WARN]: Email credentials not configured. Using mock email service.
+{
+  "service": "payloom-api"
+}
+2026-02-05 12:21:43 [INFO]: Mongoose disconnected
+{
+  "service": "payloom-api"
+}
+2026-02-05 12:21:43 [ERROR]: Database connection failed: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+MongooseServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at _handleConnectionErrors (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1169:11)
+    at NativeConnection.openUri (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1100:11)
+    at async connectDB (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\config\database.js:6:18)
+    at async startServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\server.js:259:5)
+{
+  "service": "payloom-api",
+  "errorLabelSet": {},
+  "reason": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 159006828,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  },
+  "cause": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 159006828,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  }
+}
+2026-02-05 12:21:43 [WARN]: Continuing without database connection for testing...
+{
+  "service": "payloom-api"
+}
+2026-02-05 12:21:43 [ERROR]: Mongoose connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at Topology.selectServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:327:38)
+    at async Topology._connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:200:28)
+    at async Topology.connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:152:13)
+    at async topologyConnect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:264:17)
+    at async MongoClient._connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:277:13)
+    at async MongoClient.connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:202:13)
+    at async NativeConnection.createClient (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js:351:3)
+    at async NativeConnection.openUri (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1098:5)
+    at async connectDB (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\config\database.js:6:18)
+    at async startServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\server.js:259:5)
+{
+  "service": "payloom-api",
+  "errorLabelSet": {},
+  "reason": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 159006828,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  },
+  "cause": {
+    "errorLabelSet": {},
+    "beforeHandshake": false
+  }
+}
+2026-02-05 13:10:21 [WARN]: Email credentials not configured. Using mock email service.
+{
+  "service": "payloom-api"
+}
+2026-02-05 13:10:32 [WARN]: Email credentials not configured. Using mock email service.
+{
+  "service": "payloom-api"
+}
+2026-02-05 13:10:51 [INFO]: Mongoose disconnected
+{
+  "service": "payloom-api"
+}
+2026-02-05 13:10:51 [ERROR]: Database connection failed: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+MongooseServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at _handleConnectionErrors (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1169:11)
+    at NativeConnection.openUri (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1100:11)
+    at async connectDB (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\config\database.js:6:18)
+    at async startServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\server.js:259:5)
+{
+  "service": "payloom-api",
+  "errorLabelSet": {},
+  "reason": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 161955432,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  },
+  "cause": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 161955432,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  }
+}
+2026-02-05 13:10:51 [WARN]: Continuing without database connection for testing...
+{
+  "service": "payloom-api"
+}
+2026-02-05 13:10:51 [ERROR]: Mongoose connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at Topology.selectServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:327:38)
+    at async Topology._connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:200:28)
+    at async Topology.connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:152:13)
+    at async topologyConnect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:264:17)
+    at async MongoClient._connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:277:13)
+    at async MongoClient.connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:202:13)
+    at async NativeConnection.createClient (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js:351:3)
+    at async NativeConnection.openUri (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1098:5)
+    at async connectDB (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\config\database.js:6:18)
+    at async startServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\server.js:259:5)
+{
+  "service": "payloom-api",
+  "errorLabelSet": {},
+  "reason": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 161955432,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  },
+  "cause": {
+    "errorLabelSet": {},
+    "beforeHandshake": false
+  }
+}
+2026-02-05 13:11:02 [INFO]: Mongoose disconnected
+{
+  "service": "payloom-api"
+}
+2026-02-05 13:11:02 [ERROR]: Database connection failed: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+MongooseServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at _handleConnectionErrors (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1169:11)
+    at NativeConnection.openUri (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1100:11)
+    at async connectDB (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\config\database.js:6:18)
+    at async startServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\server.js:259:5)
+{
+  "service": "payloom-api",
+  "errorLabelSet": {},
+  "reason": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 161966719,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  },
+  "cause": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 161966719,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  }
+}
+2026-02-05 13:11:02 [WARN]: Continuing without database connection for testing...
+{
+  "service": "payloom-api"
+}
+2026-02-05 13:11:02 [ERROR]: Mongoose connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at Topology.selectServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:327:38)
+    at async Topology._connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:200:28)
+    at async Topology.connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:152:13)
+    at async topologyConnect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:264:17)
+    at async MongoClient._connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:277:13)
+    at async MongoClient.connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:202:13)
+    at async NativeConnection.createClient (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js:351:3)
+    at async NativeConnection.openUri (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1098:5)
+    at async connectDB (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\config\database.js:6:18)
+    at async startServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\server.js:259:5)
+{
+  "service": "payloom-api",
+  "errorLabelSet": {},
+  "reason": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 161966719,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  },
+  "cause": {
+    "errorLabelSet": {},
+    "beforeHandshake": false
+  }
+}
+2026-02-05 13:13:22 [ERROR]: Registration error: Operation `users.findOne()` buffering timed out after 10000ms
+MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:187:23)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+{
+  "service": "payloom-api"
+}
+2026-02-05 13:14:55 [WARN]: Email credentials not configured. Using mock email service.
+{
+  "service": "payloom-api"
+}
+2026-02-05 13:15:25 [INFO]: Mongoose disconnected
+{
+  "service": "payloom-api"
+}
+2026-02-05 13:15:25 [ERROR]: Database connection failed: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+MongooseServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at _handleConnectionErrors (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1169:11)
+    at NativeConnection.openUri (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1100:11)
+    at async connectDB (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\config\database.js:6:18)
+    at async startServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\server.js:259:5)
+{
+  "service": "payloom-api",
+  "errorLabelSet": {},
+  "reason": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 162229232,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  },
+  "cause": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 162229232,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  }
+}
+2026-02-05 13:15:25 [WARN]: Continuing without database connection for testing...
+{
+  "service": "payloom-api"
+}
+2026-02-05 13:15:25 [ERROR]: Mongoose connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at Topology.selectServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:327:38)
+    at async Topology._connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:200:28)
+    at async Topology.connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:152:13)
+    at async topologyConnect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:264:17)
+    at async MongoClient._connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:277:13)
+    at async MongoClient.connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:202:13)
+    at async NativeConnection.createClient (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js:351:3)
+    at async NativeConnection.openUri (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1098:5)
+    at async connectDB (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\config\database.js:6:18)
+    at async startServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\server.js:259:5)
+{
+  "service": "payloom-api",
+  "errorLabelSet": {},
+  "reason": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 162229232,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  },
+  "cause": {
+    "errorLabelSet": {},
+    "beforeHandshake": false
+  }
+}
+2026-02-05 13:27:50 [WARN]: Email credentials not configured. Using mock email service.
+{
+  "service": "payloom-api"
+}
+2026-02-05 13:28:20 [INFO]: Mongoose disconnected
+{
+  "service": "payloom-api"
+}
+2026-02-05 13:28:20 [ERROR]: Database connection failed: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+MongooseServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at _handleConnectionErrors (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1169:11)
+    at NativeConnection.openUri (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1100:11)
+    at async connectDB (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\config\database.js:6:18)
+    at async startServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\server.js:259:5)
+{
+  "service": "payloom-api",
+  "errorLabelSet": {},
+  "reason": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 163004366,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  },
+  "cause": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 163004366,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  }
+}
+2026-02-05 13:28:20 [WARN]: Continuing without database connection for testing...
+{
+  "service": "payloom-api"
+}
+2026-02-05 13:28:20 [ERROR]: Mongoose connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at Topology.selectServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:327:38)
+    at async Topology._connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:200:28)
+    at async Topology.connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:152:13)
+    at async topologyConnect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:264:17)
+    at async MongoClient._connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:277:13)
+    at async MongoClient.connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:202:13)
+    at async NativeConnection.createClient (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js:351:3)
+    at async NativeConnection.openUri (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1098:5)
+    at async connectDB (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\config\database.js:6:18)
+    at async startServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\server.js:259:5)
+{
+  "service": "payloom-api",
+  "errorLabelSet": {},
+  "reason": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 163004366,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  },
+  "cause": {
+    "errorLabelSet": {},
+    "beforeHandshake": false
+  }
+}
+2026-02-05 13:52:49 [INFO]: Mongoose disconnected
+{
+  "service": "payloom-api"
+}
+2026-02-05 13:52:49 [ERROR]: Database connection failed: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+    at _handleConnectionErrors (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1169:11)
+    at NativeConnection.openUri (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1100:11)
+    at async connectDB (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\config\database.js:6:18)
+    at async startServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\server.js:259:5)
+{
+  "service": "payloom-api",
+  "errorLabelSet": {},
+  "reason": {
+    "type": "ReplicaSetNoPrimary",
+    "servers": {
+      "ac-uvcezvu-shard-00-01.yhzfruz.mongodb.net:27017": {
+        "address": "ac-uvcezvu-shard-00-01.yhzfruz.mongodb.net:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 164473205,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      },
+      "ac-uvcezvu-shard-00-02.yhzfruz.mongodb.net:27017": {
+        "address": "ac-uvcezvu-shard-00-02.yhzfruz.mongodb.net:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 164472079,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      },
+      "ac-uvcezvu-shard-00-00.yhzfruz.mongodb.net:27017": {
+        "address": "ac-uvcezvu-shard-00-00.yhzfruz.mongodb.net:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 164472079,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": "atlas-53xy3r-shard-0",
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  },
+  "cause": {
+    "type": "ReplicaSetNoPrimary",
+    "servers": {
+      "ac-uvcezvu-shard-00-01.yhzfruz.mongodb.net:27017": {
+        "address": "ac-uvcezvu-shard-00-01.yhzfruz.mongodb.net:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 164473205,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      },
+      "ac-uvcezvu-shard-00-02.yhzfruz.mongodb.net:27017": {
+        "address": "ac-uvcezvu-shard-00-02.yhzfruz.mongodb.net:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 164472079,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      },
+      "ac-uvcezvu-shard-00-00.yhzfruz.mongodb.net:27017": {
+        "address": "ac-uvcezvu-shard-00-00.yhzfruz.mongodb.net:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 164472079,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": "atlas-53xy3r-shard-0",
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  }
+}
+2026-02-05 13:52:49 [WARN]: Continuing without database connection for testing...
+{
+  "service": "payloom-api"
+}
+2026-02-05 13:52:49 [ERROR]: Mongoose connection error: 8C1F0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:openssl\ssl\record\rec_layer_s3.c:916:SSL alert number 80
+
+MongoServerSelectionError: 8C1F0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:openssl\ssl\record\rec_layer_s3.c:916:SSL alert number 80
+
+    at Topology.selectServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:327:38)
+    at async Topology._connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:200:28)
+    at async Topology.connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:152:13)
+    at async topologyConnect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:264:17)
+    at async MongoClient._connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:277:13)
+    at async MongoClient.connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:202:13)
+    at async NativeConnection.createClient (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js:351:3)
+    at async NativeConnection.openUri (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1098:5)
+    at async connectDB (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\config\database.js:6:18)
+    at async startServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\server.js:259:5)
+{
+  "service": "payloom-api",
+  "errorLabelSet": {},
+  "reason": {
+    "type": "ReplicaSetNoPrimary",
+    "servers": {
+      "ac-uvcezvu-shard-00-01.yhzfruz.mongodb.net:27017": {
+        "address": "ac-uvcezvu-shard-00-01.yhzfruz.mongodb.net:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 164473205,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      },
+      "ac-uvcezvu-shard-00-02.yhzfruz.mongodb.net:27017": {
+        "address": "ac-uvcezvu-shard-00-02.yhzfruz.mongodb.net:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 164472079,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      },
+      "ac-uvcezvu-shard-00-00.yhzfruz.mongodb.net:27017": {
+        "address": "ac-uvcezvu-shard-00-00.yhzfruz.mongodb.net:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 164472079,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": "atlas-53xy3r-shard-0",
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  },
+  "cause": {
+    "errorLabelSet": {},
+    "beforeHandshake": false
+  }
+}
+2026-02-05 13:53:38 [INFO]: Mongoose disconnected
+{
+  "service": "payloom-api"
+}
+2026-02-05 13:53:38 [ERROR]: Database connection failed: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+    at _handleConnectionErrors (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1169:11)
+    at NativeConnection.openUri (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1100:11)
+    at async connectDB (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\config\database.js:6:18)
+    at async startServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\server.js:259:5)
+{
+  "service": "payloom-api",
+  "errorLabelSet": {},
+  "reason": {
+    "type": "ReplicaSetNoPrimary",
+    "servers": {
+      "ac-uvcezvu-shard-00-02.yhzfruz.mongodb.net:27017": {
+        "address": "ac-uvcezvu-shard-00-02.yhzfruz.mongodb.net:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 164521441,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      },
+      "ac-uvcezvu-shard-00-00.yhzfruz.mongodb.net:27017": {
+        "address": "ac-uvcezvu-shard-00-00.yhzfruz.mongodb.net:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 164521439,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      },
+      "ac-uvcezvu-shard-00-01.yhzfruz.mongodb.net:27017": {
+        "address": "ac-uvcezvu-shard-00-01.yhzfruz.mongodb.net:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 164521440,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": "atlas-53xy3r-shard-0",
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  },
+  "cause": {
+    "type": "ReplicaSetNoPrimary",
+    "servers": {
+      "ac-uvcezvu-shard-00-02.yhzfruz.mongodb.net:27017": {
+        "address": "ac-uvcezvu-shard-00-02.yhzfruz.mongodb.net:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 164521441,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      },
+      "ac-uvcezvu-shard-00-00.yhzfruz.mongodb.net:27017": {
+        "address": "ac-uvcezvu-shard-00-00.yhzfruz.mongodb.net:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 164521439,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      },
+      "ac-uvcezvu-shard-00-01.yhzfruz.mongodb.net:27017": {
+        "address": "ac-uvcezvu-shard-00-01.yhzfruz.mongodb.net:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 164521440,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": "atlas-53xy3r-shard-0",
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  }
+}
+2026-02-05 13:53:38 [WARN]: Continuing without database connection for testing...
+{
+  "service": "payloom-api"
+}
+2026-02-05 13:53:38 [ERROR]: Mongoose connection error: E87E0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:openssl\ssl\record\rec_layer_s3.c:916:SSL alert number 80
+
+MongoServerSelectionError: E87E0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:openssl\ssl\record\rec_layer_s3.c:916:SSL alert number 80
+
+    at Topology.selectServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:327:38)
+    at async Topology._connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:200:28)
+    at async Topology.connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:152:13)
+    at async topologyConnect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:264:17)
+    at async MongoClient._connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:277:13)
+    at async MongoClient.connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:202:13)
+    at async NativeConnection.createClient (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js:351:3)
+    at async NativeConnection.openUri (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1098:5)
+    at async connectDB (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\config\database.js:6:18)
+    at async startServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\server.js:259:5)
+{
+  "service": "payloom-api",
+  "errorLabelSet": {},
+  "reason": {
+    "type": "ReplicaSetNoPrimary",
+    "servers": {
+      "ac-uvcezvu-shard-00-02.yhzfruz.mongodb.net:27017": {
+        "address": "ac-uvcezvu-shard-00-02.yhzfruz.mongodb.net:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 164521441,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      },
+      "ac-uvcezvu-shard-00-00.yhzfruz.mongodb.net:27017": {
+        "address": "ac-uvcezvu-shard-00-00.yhzfruz.mongodb.net:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 164521439,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      },
+      "ac-uvcezvu-shard-00-01.yhzfruz.mongodb.net:27017": {
+        "address": "ac-uvcezvu-shard-00-01.yhzfruz.mongodb.net:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 164521440,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": "atlas-53xy3r-shard-0",
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  },
+  "cause": {
+    "errorLabelSet": {},
+    "beforeHandshake": false
+  }
+}
+2026-02-05 13:54:51 [INFO]: Mongoose disconnected
+{
+  "service": "payloom-api"
+}
+2026-02-05 13:54:51 [ERROR]: Database connection failed: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+    at _handleConnectionErrors (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1169:11)
+    at NativeConnection.openUri (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1100:11)
+    at async connectDB (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\config\database.js:6:18)
+    at async startServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\server.js:259:5)
+{
+  "service": "payloom-api",
+  "errorLabelSet": {},
+  "reason": {
+    "type": "ReplicaSetNoPrimary",
+    "servers": {
+      "ac-uvcezvu-shard-00-01.yhzfruz.mongodb.net:27017": {
+        "address": "ac-uvcezvu-shard-00-01.yhzfruz.mongodb.net:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 164594664,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      },
+      "ac-uvcezvu-shard-00-02.yhzfruz.mongodb.net:27017": {
+        "address": "ac-uvcezvu-shard-00-02.yhzfruz.mongodb.net:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 164594962,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      },
+      "ac-uvcezvu-shard-00-00.yhzfruz.mongodb.net:27017": {
+        "address": "ac-uvcezvu-shard-00-00.yhzfruz.mongodb.net:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 164594963,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": "atlas-53xy3r-shard-0",
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  },
+  "cause": {
+    "type": "ReplicaSetNoPrimary",
+    "servers": {
+      "ac-uvcezvu-shard-00-01.yhzfruz.mongodb.net:27017": {
+        "address": "ac-uvcezvu-shard-00-01.yhzfruz.mongodb.net:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 164594664,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      },
+      "ac-uvcezvu-shard-00-02.yhzfruz.mongodb.net:27017": {
+        "address": "ac-uvcezvu-shard-00-02.yhzfruz.mongodb.net:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 164594962,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      },
+      "ac-uvcezvu-shard-00-00.yhzfruz.mongodb.net:27017": {
+        "address": "ac-uvcezvu-shard-00-00.yhzfruz.mongodb.net:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 164594963,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": "atlas-53xy3r-shard-0",
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  }
+}
+2026-02-05 13:54:51 [WARN]: Continuing without database connection for testing...
+{
+  "service": "payloom-api"
+}
+2026-02-05 13:54:51 [ERROR]: Mongoose connection error: 5C7B0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:openssl\ssl\record\rec_layer_s3.c:916:SSL alert number 80
+
+MongoServerSelectionError: 5C7B0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:openssl\ssl\record\rec_layer_s3.c:916:SSL alert number 80
+
+    at Topology.selectServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:327:38)
+    at async Topology._connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:200:28)
+    at async Topology.connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:152:13)
+    at async topologyConnect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:264:17)
+    at async MongoClient._connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:277:13)
+    at async MongoClient.connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:202:13)
+    at async NativeConnection.createClient (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js:351:3)
+    at async NativeConnection.openUri (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1098:5)
+    at async connectDB (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\config\database.js:6:18)
+    at async startServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\server.js:259:5)
+{
+  "service": "payloom-api",
+  "errorLabelSet": {},
+  "reason": {
+    "type": "ReplicaSetNoPrimary",
+    "servers": {
+      "ac-uvcezvu-shard-00-01.yhzfruz.mongodb.net:27017": {
+        "address": "ac-uvcezvu-shard-00-01.yhzfruz.mongodb.net:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 164594664,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      },
+      "ac-uvcezvu-shard-00-02.yhzfruz.mongodb.net:27017": {
+        "address": "ac-uvcezvu-shard-00-02.yhzfruz.mongodb.net:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 164594962,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      },
+      "ac-uvcezvu-shard-00-00.yhzfruz.mongodb.net:27017": {
+        "address": "ac-uvcezvu-shard-00-00.yhzfruz.mongodb.net:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 164594963,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": "atlas-53xy3r-shard-0",
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  },
+  "cause": {
+    "errorLabelSet": {},
+    "beforeHandshake": false
+  }
+}
+2026-02-05 14:01:44 [INFO]: Mongoose disconnected
+{
+  "service": "payloom-api"
+}
+2026-02-05 14:01:44 [ERROR]: Database connection failed: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+MongooseServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at _handleConnectionErrors (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1169:11)
+    at NativeConnection.openUri (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1100:11)
+    at async connectDB (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\config\database.js:6:18)
+    at async startServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\server.js:259:5)
+{
+  "service": "payloom-api",
+  "errorLabelSet": {},
+  "reason": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 165008586,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  },
+  "cause": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 165008586,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  }
+}
+2026-02-05 14:01:44 [WARN]: Continuing without database connection for testing...
+{
+  "service": "payloom-api"
+}
+2026-02-05 14:01:44 [ERROR]: Mongoose connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at Topology.selectServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:327:38)
+    at async Topology._connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:200:28)
+    at async Topology.connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:152:13)
+    at async topologyConnect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:264:17)
+    at async MongoClient._connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:277:13)
+    at async MongoClient.connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:202:13)
+    at async NativeConnection.createClient (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js:351:3)
+    at async NativeConnection.openUri (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1098:5)
+    at async connectDB (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\config\database.js:6:18)
+    at async startServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\server.js:259:5)
+{
+  "service": "payloom-api",
+  "errorLabelSet": {},
+  "reason": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 165008586,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  },
+  "cause": {
+    "errorLabelSet": {},
+    "beforeHandshake": false
+  }
+}
+2026-02-05 14:02:36 [INFO]: Mongoose disconnected
+{
+  "service": "payloom-api"
+}
+2026-02-05 14:02:36 [ERROR]: Database connection failed: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+MongooseServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at _handleConnectionErrors (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1169:11)
+    at NativeConnection.openUri (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1100:11)
+    at async connectDB (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\config\database.js:6:18)
+    at async startServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\server.js:259:5)
+{
+  "service": "payloom-api",
+  "errorLabelSet": {},
+  "reason": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 165060105,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  },
+  "cause": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 165060105,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  }
+}
+2026-02-05 14:02:36 [WARN]: Continuing without database connection for testing...
+{
+  "service": "payloom-api"
+}
+2026-02-05 14:02:36 [ERROR]: Mongoose connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at Topology.selectServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:327:38)
+    at async Topology._connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:200:28)
+    at async Topology.connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:152:13)
+    at async topologyConnect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:264:17)
+    at async MongoClient._connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:277:13)
+    at async MongoClient.connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:202:13)
+    at async NativeConnection.createClient (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js:351:3)
+    at async NativeConnection.openUri (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1098:5)
+    at async connectDB (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\config\database.js:6:18)
+    at async startServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\server.js:259:5)
+{
+  "service": "payloom-api",
+  "errorLabelSet": {},
+  "reason": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 165060105,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  },
+  "cause": {
+    "errorLabelSet": {},
+    "beforeHandshake": false
+  }
+}
+2026-02-05 14:14:43 [INFO]: Mongoose disconnected
+{
+  "service": "payloom-api"
+}
+2026-02-05 14:14:43 [ERROR]: Database connection failed: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+MongooseServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at _handleConnectionErrors (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1169:11)
+    at NativeConnection.openUri (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1100:11)
+    at async connectDB (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\config\database.js:6:18)
+    at async startServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\server.js:259:5)
+{
+  "service": "payloom-api",
+  "errorLabelSet": {},
+  "reason": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 165787683,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  },
+  "cause": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 165787683,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  }
+}
+2026-02-05 14:14:43 [WARN]: Continuing without database connection for testing...
+{
+  "service": "payloom-api"
+}
+2026-02-05 14:14:43 [ERROR]: Mongoose connection error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at Topology.selectServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:327:38)
+    at async Topology._connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:200:28)
+    at async Topology.connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\sdam\topology.js:152:13)
+    at async topologyConnect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:264:17)
+    at async MongoClient._connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:277:13)
+    at async MongoClient.connect (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongodb\lib\mongo_client.js:202:13)
+    at async NativeConnection.createClient (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\connection.js:351:3)
+    at async NativeConnection.openUri (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\node_modules\mongoose\lib\connection.js:1098:5)
+    at async connectDB (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\src\config\database.js:6:18)
+    at async startServer (C:\Users\Hp\Desktop\PAYLOOM INSTANTS\backend\server.js:259:5)
+{
+  "service": "payloom-api",
+  "errorLabelSet": {},
+  "reason": {
+    "type": "Unknown",
+    "servers": {
+      "localhost:27017": {
+        "address": "localhost:27017",
+        "type": "Unknown",
+        "hosts": [],
+        "passives": [],
+        "arbiters": [],
+        "tags": {},
+        "minWireVersion": 0,
+        "maxWireVersion": 0,
+        "roundTripTime": -1,
+        "minRoundTripTime": 0,
+        "lastUpdateTime": 165787683,
+        "lastWriteDate": 0,
+        "error": {
+          "errorLabelSet": {},
+          "beforeHandshake": false
+        },
+        "topologyVersion": null,
+        "setName": null,
+        "setVersion": null,
+        "electionId": null,
+        "logicalSessionTimeoutMinutes": null,
+        "maxMessageSizeBytes": null,
+        "maxWriteBatchSize": null,
+        "maxBsonObjectSize": null,
+        "primary": null,
+        "me": null,
+        "$clusterTime": null,
+        "iscryptd": false
+      }
+    },
+    "stale": false,
+    "compatible": true,
+    "heartbeatFrequencyMS": 10000,
+    "localThresholdMS": 15,
+    "setName": null,
+    "maxElectionId": null,
+    "maxSetVersion": null,
+    "commonWireVersion": 0,
+    "logicalSessionTimeoutMinutes": null
+  },
+  "cause": {
+    "errorLabelSet": {},
+    "beforeHandshake": false
+  }
+}
